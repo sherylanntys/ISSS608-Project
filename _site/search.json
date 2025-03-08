@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "ISSS608 Project",
+    "title": "ISSS608 Visual Analytics and Applications",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Welcome toWeather Pulse\n  \n    \n    Singapore's climate has been experiencing rising temperatures and increasing weather extremes driven by climate change and urbanisation. In 2024, Singapore experienced one of its hottest years on record, with temperatures exceeding long-term averages. These climate trends pose significant risks, including heat stress, water resource management challenges and urban planning concerns.\n    \n    Existing reports and tools offer real-time weather forecasts and historical comparisons using long-term averages. However, they lack interactive analysis tools that would allow for a deeper exploration of historical trends, spatial patterns and future projections.\n    \n    Weather Pulse was developed to address these gaps. It is an R Shiny Application that has the following key features:\n    \n        \n\n\n\n\n\n\n\n\nExploratory & Confirmatory Analysis\nTime-Series Analysis\nGeospatial Analysis"
   },
   {
     "objectID": "about.html",
@@ -12,5 +12,33 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "ISSS608 Visual Analytics and Applications",
+    "section": "Welcome",
+    "text": "Welcome\n\n  Project Description"
+  },
+  {
+    "objectID": "index.html#explore",
+    "href": "index.html#explore",
+    "title": "ISSS608 Visual Analytics and Applications",
+    "section": "Explore",
+    "text": "Explore"
+  },
+  {
+    "objectID": "index.html#latest-posts",
+    "href": "index.html#latest-posts",
+    "title": "ISSS608 Visual Analytics and Applications",
+    "section": "Latest Posts",
+    "text": "Latest Posts\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html#welcome-to-weather-pulse",
+    "href": "index.html#welcome-to-weather-pulse",
+    "title": "ISSS608 Visual Analytics and Applications",
+    "section": "Welcome to Weather Pulse",
+    "text": "Welcome to Weather Pulse\n\n  Welcome to Weather Pulse\n  Project Description"
   }
 ]
