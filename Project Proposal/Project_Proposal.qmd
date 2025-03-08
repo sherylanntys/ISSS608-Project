@@ -176,6 +176,12 @@ The list below summarises the R packages that will be used in the project:
 
 # 6.0 Project Management
 
-The screenshow below shows an overview of our project timeline:
+## 6.1 Github Link
+
+The project is managed through the following Github Repository: <https://github.com/sherylanntys/ISSS608-Project>
+
+## 6.2 Project Timeline
+
+The screenshot below provides an overview of our project timeline and responsibilities. It outlines key task allocations and deadlines.
 
 ![](images/clipboard-2573395025.png)

@@ -75,5 +75,19 @@
     "title": "Project Proposal",
     "section": "4.3 Geospatial Analysis",
     "text": "4.3 Geospatial Analysis\n\n\n\n\n\nThe geospatial visualization component will map the spatial distribution of climate variables across Singapore, allowing users to explore spatial patterns, trends, and identify localized climate anomalies.\nChoropleth maps will be utilized to visually represent variations in climate variables across different regions, with colour gradients indicating temperature or rainfall intensity. The tmap package will be used to generate these maps, while the sf package will manage and manipulate spatial data, ensuring precise alignment of climate data with Singapore’s geographical boundaries.\nWe will extract the relevant shapefiles from the Urban Redevelopment Authority (URA) website and integrate geographical coordinates of weather stations to map the climate data across Singapore."
+  },
+  {
+    "objectID": "Project Proposal/Project_Proposal.html#github-link",
+    "href": "Project Proposal/Project_Proposal.html#github-link",
+    "title": "Project Proposal",
+    "section": "6.1 Github Link",
+    "text": "6.1 Github Link\nThe project is managed through the following Github Repository: https://github.com/sherylanntys/ISSS608-Project"
+  },
+  {
+    "objectID": "Project Proposal/Project_Proposal.html#project-timeline",
+    "href": "Project Proposal/Project_Proposal.html#project-timeline",
+    "title": "Project Proposal",
+    "section": "6.2 Project Timeline",
+    "text": "6.2 Project Timeline\nThe screenshot below provides an overview of our project timeline and responsibilities. It outlines key task allocations and deadlines."
   }
 ]
