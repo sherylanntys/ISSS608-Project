@@ -13,7 +13,7 @@ website:
     
     left:
       - text: "Project Proposal"
-        href: proposal.html
+        href: Project Proposal/Project_Proposal.html
         
 format:
   html:

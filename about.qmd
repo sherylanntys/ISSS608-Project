@@ -41,38 +41,35 @@ anchor-sections: false
     width: 50%; /* Ensures equal column width */
     padding: 20px;
     vertical-align: middle; /* Centers images and text */
-    font-family: 'Futura', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
+    border: none;
   }
 
   .about-table img {
-    max-width: 100px; /* Adjust size of images */
-    height: auto;
+    max-width: auto; /* Adjust size of images */
+    max-height: 200px;
+    border: none;
   }
 
 </style>
 
+<center><img src="images/clipboard-306778515.png" width="200"></center>
+
+
 <div class="about-container">
-  <h2>Meet the Team</h2>
+  <h2>Meet the Team:<br>
+  Group 8</h2>
   
   <table class="about-table">
-    <tr>
-      <td><img src="images/icon-1.png"></td>
-      <td><img src="images/icon-2.png"></td>
-    </tr>
-    <tr>
-      <td>Exploratory & Confirmatory Analysis</td>
-      <td>Time-Series Forecasting</td>
-    </tr>
-    <tr>
-      <td><img src="images/icon-3.png"></td>
-      <td><img src="images/icon-4.png"></td>
-    </tr>
-    <tr>
-      <td>Geospatial Visualization</td>
-      <td>Interactive Climate Data Insights</td>
-    </tr>
-  </table>
+<tr>
+<td><img src="images/LXY2.png"></td>
+<td><img src="images/SAT.png"></td>
+</tr>
+<tr>
+<td>Leng Yi Xiu</td>
+<td>Sheryl Ann Tan</td>
+</tr>
+</table>
 </div>
-
 ```

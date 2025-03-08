@@ -75,12 +75,11 @@ anchor-sections: false
     font-size: 14px;
   }
 </style>
-
 ```
 
 ```{=html}
 
-<center><img src="images/clipboard-306778515.png" class="welcome-image" width="200"></center>
+<center><img src="images/clipboard-306778515.png" width="200"></center>
 ```
 
 ```{=html}
@@ -92,11 +91,11 @@ anchor-sections: false
   
   <p class="welcome-text">
     
-    Singapore's climate has been experiencing <strong>rising temperatures and increasing weather extremes</strong> driven by climate change and urbanisation. In 2024, Singapore experienced one of its <strong>hottest years on record</strong>, with temperatures exceeding long-term averages. These climate trends pose significant risks, including <strong>heat stress, water resource management challenges and urban planning concerns</strong>.<br><br>
+    <br>Singapore's climate has been experiencing <strong>rising temperatures and increasing weather extremes</strong> driven by climate change and urbanisation. In 2024, Singapore experienced one of its <strong>hottest years on record</strong>, with temperatures exceeding long-term averages. These climate trends pose significant risks, including <strong>heat stress, water resource management challenges and urban planning concerns</strong>.<br><br>
     
     Existing reports and tools offer real-time weather forecasts and historical comparisons using long-term averages. However, they lack interactive analysis tools that would allow for a deeper exploration of historical trends, spatial patterns and future projections.<br><br>
     
-    <b>Weather Pulse</b> was developed to address these gaps. It is an R Shiny Application that has the following key features:<br><br>
+    <b>Weather Pulse</b> was developed to address these gaps. It is an R Shiny Application that has the following key features:<br>
     
         <table class="feature-table">
       <tr>
@@ -114,4 +113,3 @@ anchor-sections: false
       </p>
 </div>
 ```
-
