@@ -4,11 +4,17 @@ project:
 website:
   title: "ISSS608: Weather Pulse"
   navbar:
-    left:
+    right:
       - href: index.qmd
         text: Home
-      - about.qmd
-
+      - href: about.qmd
+      - icon: github
+        href: https://github.com/sherylanntys/ISSS608-Project
+    
+    left:
+      - text: "Project Proposal"
+        href: proposal.html
+        
 format:
   html:
     theme:

@@ -1,9 +1,78 @@
 ---
 title: "About"
+number-sections: false
+anchor-sections: false
 ---
 
-About this site
+```{=html}
 
-```{r}
-1 + 1
+<style>
+  body {
+    background-image: url('images/wallpaperflare.com_wallpaper.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    display: none; /* Hides the page title */
+  }
+
+  .about-container {
+    width: 70%; /* Adjust width as needed */
+    margin: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9); /* White background with 90% opacity */
+    border-radius: 15px; /* Rounded edges */
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .about-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+
+  .about-table td {
+    width: 50%; /* Ensures equal column width */
+    padding: 20px;
+    vertical-align: middle; /* Centers images and text */
+    font-family: 'Futura', sans-serif;
+    font-size: 16px;
+  }
+
+  .about-table img {
+    max-width: 100px; /* Adjust size of images */
+    height: auto;
+  }
+
+</style>
+
+<div class="about-container">
+  <h2>Meet the Team</h2>
+  
+  <table class="about-table">
+    <tr>
+      <td><img src="images/icon-1.png"></td>
+      <td><img src="images/icon-2.png"></td>
+    </tr>
+    <tr>
+      <td>Exploratory & Confirmatory Analysis</td>
+      <td>Time-Series Forecasting</td>
+    </tr>
+    <tr>
+      <td><img src="images/icon-3.png"></td>
+      <td><img src="images/icon-4.png"></td>
+    </tr>
+    <tr>
+      <td>Geospatial Visualization</td>
+      <td>Interactive Climate Data Insights</td>
+    </tr>
+  </table>
+</div>
+
 ```

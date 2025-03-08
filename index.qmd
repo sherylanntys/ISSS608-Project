@@ -1,7 +1,6 @@
 ---
 title: "ISSS608 Visual Analytics and Applications"
 toc: false
-number-sections: false
 anchor-sections: false
 ---
 
@@ -19,67 +18,64 @@ anchor-sections: false
   }
 
   h1 {
-  display: none;
-}
+    display: none;
+  }
 
-  h2 {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: 100;
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    border-bottom: none;
-  }
-  
-    .welcome-image {
-    margin-top: 50px;
-    margin-bottom: 25px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-    .welcome-container {
-    background: rgba(255, 255, 255, 0.75); /* White background with 50% opacity */
+  .welcome-container {
+    background: rgba(255, 255, 255, 0.9); /* White background with 90% opacity */
     padding: 20px;
     border-radius: 10px;
-    width: 105%;
+    width: 80%;
     text-align: center;
     margin: auto;
     font-family: 'Futura', sans-serif;
     font-size: 16px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
   }
-  
+
+  .welcome-title {
+    font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+    font-size: 36px; /* Default size */
+    font-weight: bold; /* Ensure Weather Pulse is bold */
+    margin-bottom: 10px;
+  }
+
+  .welcome-title span.small-text {
+    font-size: 22px; /* Smaller font for "WELCOME TO" */
+    font-weight: normal; /* No bold */
+    display: block;
+  }
+
+  .welcome-title span.large-text {
+    font-size: 42px; /* Larger font for "WEATHER PULSE" */
+    font-weight: bold; /* Make it bold */
+  }
+
   .welcome-text {
-      font-family: 'Roboto', sans-serif;
-      font-size: 14px;
-      margin-top: -20px;
-    }
-    
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-top: -10px;
+  }
+
   .welcome-text b, .welcome-text strong {
     font-weight: bold;
-}
+  }
 
-.feature-table {
-  width: 100%;
-  text-align: center;
-  border-collapse: collapse;
-}
+  .feature-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
 
-.feature-table td {
-  width: 33.33%; /* Ensures equal width for each column */
-  padding: 10px; /* Adds spacing around images */
-  vertical-align: middle; /* Centers images and captions */
-  font-family: 'Futura', sans-serif;
-  font-size: 14px;
-}
-
-
-
+  .feature-table td {
+    width: 33.33%; /* Ensures equal width for each column */
+    padding: 10px; /* Adds spacing around images */
+    vertical-align: middle; /* Centers images and captions */
+    font-family: 'Futura', sans-serif;
+    font-size: 14px;
+  }
 </style>
+
 ```
 
 ```{=html}
@@ -89,7 +85,11 @@ anchor-sections: false
 
 ```{=html}
 <div class="welcome-container">
-  <h2 class="welcome-title">Welcome to<br>Weather Pulse</h2>
+  <h2 class="welcome-title">
+    <span class="small-text">WELCOME TO</span> 
+    <span class="large-text">WEATHER PULSE</span><br><br>
+  </h2>
+  
   <p class="welcome-text">
     
     Singapore's climate has been experiencing <strong>rising temperatures and increasing weather extremes</strong> driven by climate change and urbanisation. In 2024, Singapore experienced one of its <strong>hottest years on record</strong>, with temperatures exceeding long-term averages. These climate trends pose significant risks, including <strong>heat stress, water resource management challenges and urban planning concerns</strong>.<br><br>
@@ -105,7 +105,7 @@ anchor-sections: false
 <td><img src="images/map.png" width="100"></td>
       </tr>
       <tr>
-<td>Exploratory & Confirmatory Analysis</td>
+<td>Exploratory & Confirmatory Data Analysis</td>
 <td>Time-Series Analysis</td>
 <td>Geospatial Analysis</td>
       </tr>

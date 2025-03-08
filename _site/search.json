@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "ISSS608 Visual Analytics and Applications",
     "section": "",
-    "text": "Welcome toWeather Pulse\n  \n    \n    Singapore's climate has been experiencing rising temperatures and increasing weather extremes driven by climate change and urbanisation. In 2024, Singapore experienced one of its hottest years on record, with temperatures exceeding long-term averages. These climate trends pose significant risks, including heat stress, water resource management challenges and urban planning concerns.\n    \n    Existing reports and tools offer real-time weather forecasts and historical comparisons using long-term averages. However, they lack interactive analysis tools that would allow for a deeper exploration of historical trends, spatial patterns and future projections.\n    \n    Weather Pulse was developed to address these gaps. It is an R Shiny Application that has the following key features:\n    \n        \n\n\n\n\n\n\n\n\nExploratory & Confirmatory Analysis\nTime-Series Analysis\nGeospatial Analysis"
+    "text": "WELCOME TO \n    WEATHER PULSE\n  \n  \n  \n    \n    Singapore's climate has been experiencing rising temperatures and increasing weather extremes driven by climate change and urbanisation. In 2024, Singapore experienced one of its hottest years on record, with temperatures exceeding long-term averages. These climate trends pose significant risks, including heat stress, water resource management challenges and urban planning concerns.\n    \n    Existing reports and tools offer real-time weather forecasts and historical comparisons using long-term averages. However, they lack interactive analysis tools that would allow for a deeper exploration of historical trends, spatial patterns and future projections.\n    \n    Weather Pulse was developed to address these gaps. It is an R Shiny Application that has the following key features:\n    \n        \n\n\n\n\n\n\n\n\nExploratory & Confirmatory Data Analysis\nTime-Series Analysis\nGeospatial Analysis"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Meet the Team\n  \n  \n\n\n\n\n\n\n\nExploratory & Confirmatory Analysis\nTime-Series Forecasting\n\n\n\n\n\n\nGeospatial Visualization\nInteractive Climate Data Insights"
   },
   {
     "objectID": "index.html#welcome",
