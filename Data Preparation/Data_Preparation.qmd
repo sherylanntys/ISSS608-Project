@@ -1,0 +1,25 @@
+---
+title: "Data Preparation"
+author: "Leng Yi Xiu & Sheryl Ann Tan Yi-Shi"
+date: "2025-03-22"
+date-modified: "last-modified"
+execute: 
+  echo: true
+  eval: true
+  warning: false
+  freeze: true
+---
+
+# 1.0 Dataset
+
+The dataset from [MSS website](https://www.weather.gov.sg/climate-historical-daily/) eatures extensive historical daily records that include measurements of daily rainfall, temperature, and wind speed. These records are collected from 64 weather stations across Singapore, covering a period from 1980 to 2025.
+
+As the data is stored disparately on the website, segmented by both month and by weather station, it must be scraped from the website and consolidated into a single dataset to be effectively utilised.
+
+R packages that will be used for the data scraping and consolidation process are listed below:
+
+1.  `rvest`: This package will be used for scraping HTML content from the MSS website
+2.  `httr`: This package will be used alongside `rvest` to access and download pages from the MSS website.
+3.  `dplyr`: This will be used in the data consolidation process as it offers functions for data manipulation and transformation.
+
+# 2.0 Data Scraping

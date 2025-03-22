@@ -14,6 +14,8 @@ website:
     left:
       - text: "Project Proposal"
         href: Project Proposal/Project_Proposal.html
+      - text: "Data Preparation"
+        href: Data Preparation/Data_Preparation.html
         
 format:
   html:

@@ -1,59 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ISSS608 Visual Analytics and Applications",
-    "section": "",
-    "text": "WELCOME TO \n    WEATHER PULSE\n  \n  \n  \n    \n    Singapore's climate has been experiencing rising temperatures and increasing weather extremes driven by climate change and urbanisation. In 2024, Singapore experienced one of its hottest years on record, with temperatures exceeding long-term averages. These climate trends pose significant risks, including heat stress, water resource management challenges and urban planning concerns.\n    \n    Existing reports and tools offer real-time weather forecasts and historical comparisons using long-term averages. However, they lack interactive analysis tools that would allow for a deeper exploration of historical trends, spatial patterns and future projections.\n    \n    Weather Pulse was developed to address these gaps. It is an R Shiny Application that has the following key features:\n    \n        \n\n\n\n\n\n\n\n\nExploratory & Confirmatory Data Analysis\nTime-Series Analysis\nGeospatial Analysis"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Meet the Team:\n  Group 8\n  \n  \n\n\n\n\n\n\n\nLeng Yi Xiu\nSheryl Ann Tan"
-  },
-  {
-    "objectID": "index.html#welcome",
-    "href": "index.html#welcome",
-    "title": "ISSS608 Visual Analytics and Applications",
-    "section": "Welcome",
-    "text": "Welcome\n\n  Project Description"
-  },
-  {
-    "objectID": "index.html#explore",
-    "href": "index.html#explore",
-    "title": "ISSS608 Visual Analytics and Applications",
-    "section": "Explore",
-    "text": "Explore"
-  },
-  {
-    "objectID": "index.html#latest-posts",
-    "href": "index.html#latest-posts",
-    "title": "ISSS608 Visual Analytics and Applications",
-    "section": "Latest Posts",
-    "text": "Latest Posts\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "index.html#welcome-to-weather-pulse",
-    "href": "index.html#welcome-to-weather-pulse",
-    "title": "ISSS608 Visual Analytics and Applications",
-    "section": "Welcome to Weather Pulse",
-    "text": "Welcome to Weather Pulse\n\n  Welcome to Weather Pulse\n  Project Description"
-  },
-  {
     "objectID": "Project Proposal/Project_Proposal.html",
     "href": "Project Proposal/Project_Proposal.html",
     "title": "Project Proposal",
     "section": "",
     "text": "Southeast Asia is widely considered to be one of the regions that is most vulnerable to rising temperatures due to climate change and rapid urbanisation. People in this region are chronically exposed to the heat in the tropics, which is further exacerbated by the region’s high humidity1. Singapore is no exception, similarly experiencing rising temperatures.\nIn 2024, Singapore experienced one of its hottest years, tying with 2019 and 2016 as the warmest years on record2. Throughout the year, the temperatures recorded were equal to or greater than their long-term averages3. According to the Meteorological Service Singapore (MSS), the island is heating up twice as fast as the rest of the world4. This increase in temperatures is caused by a combination of global warming and the urban heat island effect, a phenomenon where urban areas become much warmer than rural areas as they are more built-up and densely populated.\nBesides rising temperatures, climate change has also led to more weather extremes in Singapore, with more frequent hot days and more extreme daily rainfall. In 2024, Singapore recorded above-average rainfall, averaging 2,739.8mm, which is 8.1% above the long-term average of 2,534.3mm5.\nThese extreme climate changes pose severe risks to public health, causing increased heat stress, dehydration, and heat-related illnesses, particularly among vulnerable populations like the elderly and those with pre-existing health conditions6. It may also result in other indirect climate challenges, such as disruptions to water and food supply.\nGiven the complexity of Singapore’s climate challenges, there is a need for effective and comprehensive visual analytics. This would enhance understanding and communication of these climate trends by visualising complex data in an intuitive and accessible format."
-  },
-  {
-    "objectID": "Project Proposal/Project_Proposal.html#footnotes",
-    "href": "Project Proposal/Project_Proposal.html#footnotes",
-    "title": "Project Proposal",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nHui, C. H. S., & Begum, S. (2025, January 10). Degrees of danger: Beating the heat in South-east Asia. The Straits Times. https://www.straitstimes.com/asia/se-asia/degrees-of-danger-beating-the-heat-in-south-east-asia↩︎\nSim, S. (2025, January 10). 2024 one of the hottest years, rainfall also higher than average: Met Service. The Straits Times. https://www.straitstimes.com/singapore/2024-joint-warmest-year-on-record-for-singapore↩︎\nMeteorological Service Singapore. (2025). Singapore Climate 2024: The year in numbers. Meteorological Service Singapore.↩︎\nNg, D., & Tang, H. H. (2019, January 13). Why Singapore is heating up twice as fast as the rest of the world. Channel News Asia. https://www.channelnewsasia.com/cnainsider/singapore-hot-weather-urban-heat-effect-temperature-humidity-906231↩︎\nSim, S. (2025, January 10). 2024 one of the hottest years, rainfall also higher than average: Met Service. The Straits Times. https://www.straitstimes.com/singapore/2024-joint-warmest-year-on-record-for-singapore↩︎\nTeng, R., & Ng, D. (2024, January 10). Concerns grow over heat-related health risks as Singapore gets warmer. Channel News Asia. https://www.channelnewsasia.com/singapore/singapore-weather-heat-stress-higher-warmer-temperatures-2100-climate-study-health-risks-concerns-4036561↩︎\nMeteorological Service Singapore. (2025). Singapore Climate 2024: The year in numbers. Meteorological Service Singapore.↩︎\nMeteorological Service Singapore. (n.d.). Historical daily records. Meteorological Service Singapore. https://www.weather.gov.sg/climate-historical-daily/↩︎\nLai, Y., & Dzombak, D. A. (2020). Use of the Autoregressive Integrated Moving Average (ARIMA) model to forecast near-term regional temperature and precipitation. Weather and Forecasting, 35(3). https://doi.org/10.1175/WAF-D-19-0158.1↩︎"
   },
   {
     "objectID": "Project Proposal/Project_Proposal.html#exploratory-confirmatory-data-analysis-module",
@@ -89,5 +40,33 @@
     "title": "Project Proposal",
     "section": "6.2 Project Timeline",
     "text": "6.2 Project Timeline\nThe screenshot below provides an overview of our project timeline and responsibilities. It outlines key task allocations and deadlines."
+  },
+  {
+    "objectID": "Project Proposal/Project_Proposal.html#footnotes",
+    "href": "Project Proposal/Project_Proposal.html#footnotes",
+    "title": "Project Proposal",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nHui, C. H. S., & Begum, S. (2025, January 10). Degrees of danger: Beating the heat in South-east Asia. The Straits Times. https://www.straitstimes.com/asia/se-asia/degrees-of-danger-beating-the-heat-in-south-east-asia↩︎\nSim, S. (2025, January 10). 2024 one of the hottest years, rainfall also higher than average: Met Service. The Straits Times. https://www.straitstimes.com/singapore/2024-joint-warmest-year-on-record-for-singapore↩︎\nMeteorological Service Singapore. (2025). Singapore Climate 2024: The year in numbers. Meteorological Service Singapore.↩︎\nNg, D., & Tang, H. H. (2019, January 13). Why Singapore is heating up twice as fast as the rest of the world. Channel News Asia. https://www.channelnewsasia.com/cnainsider/singapore-hot-weather-urban-heat-effect-temperature-humidity-906231↩︎\nSim, S. (2025, January 10). 2024 one of the hottest years, rainfall also higher than average: Met Service. The Straits Times. https://www.straitstimes.com/singapore/2024-joint-warmest-year-on-record-for-singapore↩︎\nTeng, R., & Ng, D. (2024, January 10). Concerns grow over heat-related health risks as Singapore gets warmer. Channel News Asia. https://www.channelnewsasia.com/singapore/singapore-weather-heat-stress-higher-warmer-temperatures-2100-climate-study-health-risks-concerns-4036561↩︎\nMeteorological Service Singapore. (2025). Singapore Climate 2024: The year in numbers. Meteorological Service Singapore.↩︎\nMeteorological Service Singapore. (n.d.). Historical daily records. Meteorological Service Singapore. https://www.weather.gov.sg/climate-historical-daily/↩︎\nLai, Y., & Dzombak, D. A. (2020). Use of the Autoregressive Integrated Moving Average (ARIMA) model to forecast near-term regional temperature and precipitation. Weather and Forecasting, 35(3). https://doi.org/10.1175/WAF-D-19-0158.1↩︎"
+  },
+  {
+    "objectID": "Data Preparation/Data_Preparation.html",
+    "href": "Data Preparation/Data_Preparation.html",
+    "title": "Data Preparation",
+    "section": "",
+    "text": "1.0 Dataset\nThe dataset from MSS website eatures extensive historical daily records that include measurements of daily rainfall, temperature, and wind speed. These records are collected from 64 weather stations across Singapore, covering a period from 1980 to 2025.\nAs the data is stored disparately on the website, segmented by both month and by weather station, it must be scraped from the website and consolidated into a single dataset to be effectively utilised.\nR packages that will be used for the data scraping and consolidation process are listed below:\n\nrvest: This package will be used for scraping HTML content from the MSS website\nhttr: This package will be used alongside rvest to access and download pages from the MSS website.\ndplyr: This will be used in the data consolidation process as it offers functions for data manipulation and transformation.\n\n\n\n2.0 Data Scraping"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Meet the Team:\n  Group 8\n  \n  \n\n\n\n\n\n\n\nLeng Yi Xiu\nSheryl Ann Tan"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ISSS608 Visual Analytics and Applications",
+    "section": "",
+    "text": "WELCOME TO \n    WEATHER PULSE\n  \n  \n  \n    \n    Singapore's climate has been experiencing rising temperatures and increasing weather extremes driven by climate change and urbanisation. In 2024, Singapore experienced one of its hottest years on record, with temperatures exceeding long-term averages. These climate trends pose significant risks, including heat stress, water resource management challenges and urban planning concerns.\n    \n    Existing reports and tools offer real-time weather forecasts and historical comparisons using long-term averages. However, they lack interactive analysis tools that would allow for a deeper exploration of historical trends, spatial patterns and future projections.\n    \n    Weather Pulse was developed to address these gaps. It is an R Shiny Application that has the following key features:\n    \n        \n\n\n\n\n\n\n\n\nExploratory & Confirmatory Data Analysis\nTime-Series Analysis\nGeospatial Analysis"
   }
 ]

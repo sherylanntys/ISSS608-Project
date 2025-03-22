@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Leng Yi Xiu &amp; Sheryl Ann Tan Yi-Shi">
+<meta name="dcterms.date" content="2025-03-22">
 
-<title>ISSS608: Weather Pulse - About</title>
+<title>ISSS608: Weather Pulse - Data Preparation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,21 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -77,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">ISSS608: Weather Pulse</span>
     </a>
   </div>
@@ -88,21 +91,21 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./Project Proposal/Project_Proposal.html"> 
+    <a class="nav-link" href="../Project Proposal/Project_Proposal.html"> 
 <span class="menu-text">Project Proposal</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Data Preparation/Data_Preparation.html"> 
+    <a class="nav-link active" href="../Data Preparation/Data_Preparation.html" aria-current="page"> 
 <span class="menu-text">Data Preparation</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -122,22 +125,47 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset">1.0 Dataset</a></li>
+  <li><a href="#data-scraping" id="toc-data-scraping" class="nav-link" data-scroll-target="#data-scraping">2.0 Data Scraping</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Data Preparation</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Leng Yi Xiu &amp; Sheryl Ann Tan Yi-Shi </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 22, 2025</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">March 22, 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -146,79 +174,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-
-<style>
-  body {
-    background-image: url('images/wallpaperflare.com_wallpaper.jpg'); /* Replace with your image path */
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  h1 {
-    display: none; /* Hides the page title */
-  }
-
-  .about-container {
-    width: 70%; /* Adjust width as needed */
-    margin: auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9); /* White background with 90% opacity */
-    border-radius: 15px; /* Rounded edges */
-    text-align: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .about-table {
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse;
-  }
-
-  .about-table td {
-    width: 50%; /* Ensures equal column width */
-    padding: 20px;
-    vertical-align: middle; /* Centers images and text */
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    border: none;
-  }
-
-  .about-table img {
-    max-width: auto; /* Adjust size of images */
-    max-height: 200px;
-    border: none;
-  }
-
-</style>
-
-<center><img src="images/clipboard-306778515.png" width="200"></center>
+<section id="dataset" class="level1">
+<h1>1.0 Dataset</h1>
+<p>The dataset from <a href="https://www.weather.gov.sg/climate-historical-daily/">MSS website</a> eatures extensive historical daily records that include measurements of daily rainfall, temperature, and wind speed. These records are collected from 64 weather stations across Singapore, covering a period from 1980 to 2025.</p>
+<p>As the data is stored disparately on the website, segmented by both month and by weather station, it must be scraped from the website and consolidated into a single dataset to be effectively utilised.</p>
+<p>R packages that will be used for the data scraping and consolidation process are listed below:</p>
+<ol type="1">
+<li><code>rvest</code>: This package will be used for scraping HTML content from the MSS website</li>
+<li><code>httr</code>: This package will be used alongside <code>rvest</code> to access and download pages from the MSS website.</li>
+<li><code>dplyr</code>: This will be used in the data consolidation process as it offers functions for data manipulation and transformation.</li>
+</ol>
+</section>
+<section id="data-scraping" class="level1">
+<h1>2.0 Data Scraping</h1>
 
 
-<div class="about-container">
-  <h2>Meet the Team:<br>
-  Group 8</h2>
-  
-  
-<table class="about-table caption-top table" data-quarto-postprocess="true">
-<tbody>
-<tr class="odd">
-<td><img src="images/LXY2.png" class="img-fluid"></td>
-<td><img src="images/SAT.png" class="img-fluid"></td>
-</tr>
-<tr class="even">
-<td>Leng Yi Xiu</td>
-<td>Sheryl Ann Tan</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -241,6 +212,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
