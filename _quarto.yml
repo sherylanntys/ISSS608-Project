@@ -14,8 +14,12 @@ website:
     left:
       - text: "Project Proposal"
         href: Project Proposal/Project_Proposal.html
-      - text: "Data Preparation"
-        href: Data Preparation/Data_Preparation.html
+      - text: "Exploratory/Confirmatory"
+        menu: 
+          - text: "Data Preparation"
+            href: Project Modules/Data_Preparation.html
+      - text: "Time-Series"
+      - text: "Geospatial"
         
 format:
   html:
