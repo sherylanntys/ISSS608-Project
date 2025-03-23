@@ -244,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="scraping-data-from-mss-website" class="level2">
 <h2 class="anchored" data-anchor-id="scraping-data-from-mss-website">2.2 Scraping data from MSS website</h2>
-<p>The goal of our R Shiny application is to examine and analyze weather trends in Singapore <strong>from 2020 to 2024</strong>. To achieve this, we will first scrape data from the MSS website and then proceed with data wrangling.</p>
+<p>The goal of our R Shiny application is to examine and analyze weather trends in Singapore <strong>from 2020 to 2024</strong>. To achieve this, we will first scrape the data readings of 20 automated weather stations across Singapore from the MSS website and then proceed with data wrangling.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Click to view code for reading list of stations</summary>
@@ -1536,8 +1536,11 @@ Downloading: https://www.weather.gov.sg/files/dailydata/DAILYDATA_S115_202412.cs
 <summary>Click to view code for merging aspatial data with station coordinates</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>climate_data_2020to2024 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(climate_data, stations_df, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Station"</span> <span class="ot">=</span> <span class="st">"StationName"</span>))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the merged data</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(climate_data_2020to2024)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the combined data to a separate CSV file</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(climate_data, <span class="st">"data/climate_data_2020to2024.csv"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the merged data</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(climate_data_2020to2024)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 21
@@ -1557,11 +1560,6 @@ Downloading: https://www.weather.gov.sg/files/dailydata/DAILYDATA_S115_202412.cs
 #   station &lt;chr&gt;, year &lt;int&gt;, month &lt;int&gt;, date &lt;date&gt;, StationType &lt;chr&gt;,
 #   StationID &lt;chr&gt;, Lat &lt;dbl&gt;, Long &lt;dbl&gt;</code></pre>
 </div>
-<details class="code-fold">
-<summary>Click to view code for merging aspatial data with station coordinates</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the combined data to a separate CSV file</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(climate_data, <span class="st">"data/climate_data_2020to2024.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 
 

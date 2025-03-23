@@ -105,9 +105,9 @@ head(climate_data)
 #| code-summary: "Click to view code for merging aspatial data with station coordinates"
 climate_data_2020to2024 <- left_join(climate_data, stations_df, by = c("Station" = "StationName"))
 
-# View the first few rows of the merged data
-head(climate_data_2020to2024)
-
 # Write the combined data to a separate CSV file
 write_csv(climate_data, "data/climate_data_2020to2024.csv")
+
+# View the first few rows of the merged data
+head(climate_data_2020to2024)
 ```
