@@ -27,7 +27,8 @@ R packages that will be used for the data scraping and consolidation process are
 ## 2.1 Loading Packages
 
 ```{r}
-pacman::p_load(readxl, dplyr, readr, lubridate)
+pacman::p_load(readxl, dplyr, readr, lubridate, sf, 
+               tmap, tidyverse)
 ```
 
 ## 2.2 Scraping data from MSS website
@@ -100,14 +101,56 @@ climate_data <- climate_data %>%
 head(climate_data)
 ```
 
+## 2.4 Preparing Geospatial data frame
+
+In order to visualize the automated weather stations on the map of Singapore, we will first need to transform any objects and map them in the **SVY21 system**.
+
+### 2.4.1 Setting stations_df `Long, Lat` data to coordinates
+
+```{r}
+#| code-fold: true
+#| code-summary: "Click to view code for setting crs = 3414"
+stations_df <- st_as_sf(stations_df, coords = c("Long", "Lat"), crs = 4326)
+stations_df_svy21 <- st_transform(stations_df, 3414)
+```
+
+### 2.4.2 Visualizing geospatial data
+
+```{r}
+#| code-fold: true
+#| code-summary: "Click to view code"
+tmap_mode("view")
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "Click to view code for plotting points on map" 
+  tm_shape(stations_df_svy21) +
+  tm_bubbles(col = "red",
+             size = 1,
+             border.col = "black",
+             border.lwd = 1,
+             popup.vars = "StationName"
+             )
+```
+
+```{r}
+#| code-fold: true
+#| code-summary: "Click to view code"
+tmap_mode("plot")
+```
+
+### 2.4.3 Merge aspatial and geospatial data
+
 ```{r}
 #| code-fold: true
 #| code-summary: "Click to view code for merging aspatial data with station coordinates"
-climate_data_2020to2024 <- left_join(climate_data, stations_df, by = c("Station" = "StationName"))
+climate_data_2020to2024 <- left_join(climate_data, stations_df_svy21, by = c("Station" = "StationName"))
 
 # Write the combined data to a separate CSV file
-write_csv(climate_data, "data/climate_data_2020to2024.csv")
+write_csv(climate_data_2020to2024, "data/aspatial/climate_data_2020to2024.csv")
 
 # View the first few rows of the merged data
 head(climate_data_2020to2024)
 ```
+

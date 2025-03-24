@@ -102,6 +102,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="../site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+
+<script src="../site_libs/leaflet-1.3.1/leaflet.js"></script>
+
+<link href="../site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+
+<script src="../site_libs/proj4-2.6.2/proj4.min.js"></script>
+
+<script src="../site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+
+<link href="../site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+
+<script src="../site_libs/leaflet-binding-2.2.2/leaflet.js"></script>
+
+<script src="../site_libs/leaflet-providers-2.0.0/leaflet-providers_2.0.0.js"></script>
+
+<script src="../site_libs/leaflet-providers-plugin-2.2.2/leaflet-providers-plugin.js"></script>
+
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -180,6 +204,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#loading-packages" id="toc-loading-packages" class="nav-link" data-scroll-target="#loading-packages">2.1 Loading Packages</a></li>
   <li><a href="#scraping-data-from-mss-website" id="toc-scraping-data-from-mss-website" class="nav-link" data-scroll-target="#scraping-data-from-mss-website">2.2 Scraping data from MSS website</a></li>
   <li><a href="#merging-data-and-creating-variables" id="toc-merging-data-and-creating-variables" class="nav-link" data-scroll-target="#merging-data-and-creating-variables">2.3 Merging data and creating variables</a></li>
+  <li><a href="#preparing-geospatial-data-frame" id="toc-preparing-geospatial-data-frame" class="nav-link" data-scroll-target="#preparing-geospatial-data-frame">2.4 Preparing Geospatial data frame</a>
+  <ul class="collapse">
+  <li><a href="#setting-stations_df-long-lat-data-to-coordinates" id="toc-setting-stations_df-long-lat-data-to-coordinates" class="nav-link" data-scroll-target="#setting-stations_df-long-lat-data-to-coordinates">2.4.1 Setting stations_df <code>Long, Lat</code> data to coordinates</a></li>
+  <li><a href="#visualizing-geospatial-data" id="toc-visualizing-geospatial-data" class="nav-link" data-scroll-target="#visualizing-geospatial-data">2.4.2 Visualizing geospatial data</a></li>
+  <li><a href="#merge-aspatial-and-geospatial-data" id="toc-merge-aspatial-and-geospatial-data" class="nav-link" data-scroll-target="#merge-aspatial-and-geospatial-data">2.4.3 Merge aspatial and geospatial data</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -213,7 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">March 23, 2025</p>
+      <p class="date-modified">March 24, 2025</p>
     </div>
   </div>
     
@@ -239,7 +269,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="loading-packages" class="level2">
 <h2 class="anchored" data-anchor-id="loading-packages">2.1 Loading Packages</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(readxl, dplyr, readr, lubridate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(readxl, dplyr, readr, lubridate, sf, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>               tmap, tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="scraping-data-from-mss-website" class="level2">
@@ -1531,19 +1562,66 @@ Downloading: https://www.weather.gov.sg/files/dailydata/DAILYDATA_S115_202412.cs
 #   station &lt;chr&gt;, year &lt;int&gt;, month &lt;int&gt;, date &lt;date&gt;</code></pre>
 </div>
 </div>
+</section>
+<section id="preparing-geospatial-data-frame" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-geospatial-data-frame">2.4 Preparing Geospatial data frame</h2>
+<p>In order to visualize the automated weather stations on the map of Singapore, we will first need to transform any objects and map them in the <strong>SVY21 system</strong>.</p>
+<section id="setting-stations_df-long-lat-data-to-coordinates" class="level3">
+<h3 class="anchored" data-anchor-id="setting-stations_df-long-lat-data-to-coordinates">2.4.1 Setting stations_df <code>Long, Lat</code> data to coordinates</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to view code for setting crs = 3414</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>stations_df <span class="ot">&lt;-</span> <span class="fu">st_as_sf</span>(stations_df, <span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"Long"</span>, <span class="st">"Lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>stations_df_svy21 <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(stations_df, <span class="dv">3414</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="visualizing-geospatial-data" class="level3">
+<h3 class="anchored" data-anchor-id="visualizing-geospatial-data">2.4.2 Visualizing geospatial data</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to view code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">"view"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to view code for plotting points on map</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_shape</span>(stations_df_svy21) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tm_bubbles</span>(<span class="at">col =</span> <span class="st">"red"</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">border.col =</span> <span class="st">"black"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">border.lwd =</span> <span class="dv">1</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">popup.vars =</span> <span class="st">"StationName"</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>             )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-d2c858d9526fc0b832ab" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-d2c858d9526fc0b832ab">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"createMapPane","args":["tmap401",401]},{"method":"addProviderTiles","args":["Esri.WorldGrayCanvas",null,"Esri.WorldGrayCanvas",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap",null,"OpenStreetMap",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldTopoMap",null,"Esri.WorldTopoMap",{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"pane":"tilePane"}]},{"method":"addCircles","args":[[1.4439,1.3793,1.3678,1.3729,1.3318,1.3133,1.3458,1.2542,1.2799,1.3106,1.2824,1.3571,1.416800000000001,1.4167,1.1902,1.425,1.2503,1.3406,1.3858,1.2938],[103.7854,103.85,103.9823,103.7224,103.7762,103.962,103.6817,103.6741,103.8703,103.8365,103.7545,103.9037,103.9673,103.865,103.7657,103.82,103.8275,103.8882,103.7119,103.6184],[626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709,626.8932704161709],["AWS","AWS.1","AWS.2","AWS.3","AWS.4","AWS.5","AWS.6","AWS.7","AWS.8","AWS.9","AWS.10","AWS.11","AWS.12","AWS.13","AWS.14","AWS.15","AWS.16","AWS.17","AWS.18","AWS.19"],"stations_df_svy21",{"interactive":true,"className":"","pane":"tmap401","stroke":true,"color":"#000000","weight":1,"opacity":0.5,"fill":true,"fillColor":["#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000"],"fillOpacity":[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]},["<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Admiralty<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Ang Mo Kio<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Changi<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Choa Chu Kang (South)<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Clementi<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>East Coast Parkway<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Jurong (West)<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Jurong Island<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Marina Barrage<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Newton<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Pasir Panjang<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Paya Lebar<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Pulau Ubin<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Seletar<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Semakau Island<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Sembawang<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Sentosa Island<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Tai Seng<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Tengah<\/nobr><\/td><\/tr><\/table><\/div>","<style> div.leaflet-popup-content {width:auto !important;overflow-y:auto; overflow-x:hidden;}<\/style><div style=\"max-height:25em;padding-right:0px;\"><table>\n\t\t\t   <thead><tr><th colspan=\"2\"><b>AWS<\/b><\/th><\/thead><\/tr><tr><td style=\"color: #888888;\"><nobr>StationName<\/nobr><\/td><td align=\"right\"><nobr>Tuas South<\/nobr><\/td><\/tr><\/table><\/div>"],null,["AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS","AWS"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]},{"method":"addLayersControl","args":[["Esri.WorldGrayCanvas","OpenStreetMap","Esri.WorldTopoMap"],"stations_df_svy21",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]}],"limits":{"lat":[1.1902,1.4439],"lng":[103.6184,103.9823]},"fitBounds":[1.1902,103.6184,1.4439,103.9823,[]]},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to view code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tmap_mode</span>(<span class="st">"plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="merge-aspatial-and-geospatial-data" class="level3">
+<h3 class="anchored" data-anchor-id="merge-aspatial-and-geospatial-data">2.4.3 Merge aspatial and geospatial data</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Click to view code for merging aspatial data with station coordinates</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>climate_data_2020to2024 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(climate_data, stations_df, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Station"</span> <span class="ot">=</span> <span class="st">"StationName"</span>))</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the combined data to a separate CSV file</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(climate_data, <span class="st">"data/climate_data_2020to2024.csv"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the merged data</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(climate_data_2020to2024)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>climate_data_2020to2024 <span class="ot">&lt;-</span> <span class="fu">left_join</span>(climate_data, stations_df_svy21, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"Station"</span> <span class="ot">=</span> <span class="st">"StationName"</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the combined data to a separate CSV file</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(climate_data_2020to2024, <span class="st">"data/aspatial/climate_data_2020to2024.csv"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># View the first few rows of the merged data</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(climate_data_2020to2024)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 21
+<pre><code># A tibble: 6 × 20
   Station    Year Month   Day `Daily Rainfall Total (mm)` Highest 30 min Rainf…¹
   &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;                       &lt;dbl&gt;                  &lt;dbl&gt;
 1 Admiralty  2020     4     1                         0.4                    0.4
@@ -1553,16 +1631,17 @@ Downloading: https://www.weather.gov.sg/files/dailydata/DAILYDATA_S115_202412.cs
 5 Admiralty  2020     4     5                         0                      0  
 6 Admiralty  2020     4     6                         0                      0  
 # ℹ abbreviated name: ¹​`Highest 30 min Rainfall (mm)`
-# ℹ 15 more variables: `Highest 60 min Rainfall (mm)` &lt;dbl&gt;,
+# ℹ 14 more variables: `Highest 60 min Rainfall (mm)` &lt;dbl&gt;,
 #   `Highest 120 min Rainfall (mm)` &lt;dbl&gt;, `Mean Temperature (°C)` &lt;dbl&gt;,
 #   `Maximum Temperature (°C)` &lt;dbl&gt;, `Minimum Temperature (°C)` &lt;dbl&gt;,
 #   `Mean Wind Speed (km/h)` &lt;dbl&gt;, `Max Wind Speed (km/h)` &lt;dbl&gt;,
 #   station &lt;chr&gt;, year &lt;int&gt;, month &lt;int&gt;, date &lt;date&gt;, StationType &lt;chr&gt;,
-#   StationID &lt;chr&gt;, Lat &lt;dbl&gt;, Long &lt;dbl&gt;</code></pre>
+#   StationID &lt;chr&gt;, geometry &lt;POINT [m]&gt;</code></pre>
 </div>
 </div>
 
 
+</section>
 </section>
 </section>
 
