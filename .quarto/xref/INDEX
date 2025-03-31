@@ -16,5 +16,8 @@
   },
   "Project Modules/Data_Preparation.qmd": {
     "Data_Preparation.html": "81580bac"
+  },
+  "Project Modules/Time_Series.qmd": {
+    "Time_Series.html": "fcd23e38"
   }
 }

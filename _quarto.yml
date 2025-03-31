@@ -14,12 +14,18 @@ website:
     left:
       - text: "Project Proposal"
         href: Project Proposal/Project_Proposal.html
-      - text: "Exploratory/Confirmatory"
+      - text: "Prototype"
         menu: 
-          - text: "Data Preparation"
-            href: Project Modules/Data_Preparation.html
-      - text: "Time-Series"
-      - text: "Geospatial"
+          - text: "Time-Series"
+            href: Project Modules/Time_Series.html
+          - text: "Geospatial"
+            href: link here
+      - text: "Shiny App"
+        menu: 
+          - text: "Shiny App"
+            href: https://isss608-weatherpulse.shinyapps.io/home/
+          - text: "User Guide"
+            href: link here
         
 format:
   html:

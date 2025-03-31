@@ -99,12 +99,10 @@ anchor-sections: false
     
         <table class="feature-table">
       <tr>
-<td><img src="images/bar-graph.png" width="100"></td>
 <td><img src="images/analysis.png" width="100"></td>
 <td><img src="images/map.png" width="100"></td>
       </tr>
       <tr>
-<td>Exploratory & Confirmatory Data Analysis</td>
 <td>Time-Series Analysis</td>
 <td>Geospatial Analysis</td>
       </tr>
