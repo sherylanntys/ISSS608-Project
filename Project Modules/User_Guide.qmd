@@ -55,6 +55,10 @@ Selections are made on the left pane and the visualization will render on the ri
 
 ## 3.1 Exploratory Analysis
 
+![](/images/bubbleplot.png)
+
 ## 3.2 Spatial Autocorrelation
+
+![](/images/localmorani.png)
 
 ## 3.3 Inverse Distance Weighted (IDW) Interpolation
