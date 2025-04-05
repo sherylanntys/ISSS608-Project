@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Leng Yi Xiu &amp; Sheryl Ann Tan Yi-Shi">
+<meta name="dcterms.date" content="2025-04-05">
 
-<title>ISSS608: Weather Pulse - ISSS608 Visual Analytics and Applications</title>
+<title>ISSS608: Weather Pulse - Weather Pulse - Shiny User Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,21 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,17 +70,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">ISSS608: Weather Pulse</span>
     </a>
   </div>
@@ -88,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./Project Proposal/Project_Proposal.html"> 
+    <a class="nav-link" href="../Project Proposal/Project_Proposal.html"> 
 <span class="menu-text">Project Proposal</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -97,7 +100,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-prototype">    
         <li>
-    <a class="dropdown-item" href="./Project Modules/Time_Series.html">
+    <a class="dropdown-item" href="../Project Modules/Time_Series.html">
  <span class="dropdown-text">Time-Series</span></a>
   </li>  
         <li>
@@ -120,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Shiny App-IDW</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./Project Modules/User_Guide.html">
+    <a class="dropdown-item" href="../Project Modules/User_Guide.html">
  <span class="dropdown-text">User Guide</span></a>
   </li>  
     </ul>
@@ -128,11 +131,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -151,21 +154,58 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#weather-pulse---home" id="toc-weather-pulse---home" class="nav-link active" data-scroll-target="#weather-pulse---home">1.0 Weather Pulse - Home</a></li>
+  <li><a href="#time-series-analysis" id="toc-time-series-analysis" class="nav-link" data-scroll-target="#time-series-analysis">2.0 Time Series Analysis</a>
+  <ul class="collapse">
+  <li><a href="#exploratory-analysis" id="toc-exploratory-analysis" class="nav-link" data-scroll-target="#exploratory-analysis">2.1 Exploratory Analysis</a></li>
+  <li><a href="#time-series-forecasting" id="toc-time-series-forecasting" class="nav-link" data-scroll-target="#time-series-forecasting">2.2 Time Series Forecasting</a></li>
+  </ul></li>
+  <li><a href="#geospatial-analysis" id="toc-geospatial-analysis" class="nav-link" data-scroll-target="#geospatial-analysis">3.0 Geospatial Analysis</a>
+  <ul class="collapse">
+  <li><a href="#exploratory-analysis-1" id="toc-exploratory-analysis-1" class="nav-link" data-scroll-target="#exploratory-analysis-1">3.1 Exploratory Analysis</a></li>
+  <li><a href="#spatial-autocorrelation" id="toc-spatial-autocorrelation" class="nav-link" data-scroll-target="#spatial-autocorrelation">3.2 Spatial Autocorrelation</a></li>
+  <li><a href="#inverse-distance-weighted-idw-interpolation" id="toc-inverse-distance-weighted-idw-interpolation" class="nav-link" data-scroll-target="#inverse-distance-weighted-idw-interpolation">3.3 Inverse Distance Weighted (IDW) Interpolation</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">ISSS608 Visual Analytics and Applications</h1>
+<h1 class="title">Weather Pulse - Shiny User Guide</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Leng Yi Xiu &amp; Sheryl Ann Tan Yi-Shi </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 5, 2025</p>
+    </div>
+  </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">April 5, 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -174,111 +214,89 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-
-<style>
-  body {
-    background-image: url('images/wallpaperflare.com_wallpaper.jpg'); /* Replace with your image path */
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  h1 {
-    display: none;
-  }
-
-  .welcome-container {
-    background: rgba(255, 255, 255, 0.9); /* White background with 90% opacity */
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    text-align: center;
-    margin: auto;
-    font-family: 'Futura', sans-serif;
-    font-size: 16px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .welcome-title {
-    font-family: 'Roboto', sans-serif; /* Apply Roboto font */
-    font-size: 36px; /* Default size */
-    font-weight: bold; /* Ensure Weather Pulse is bold */
-    margin-bottom: 10px;
-  }
-
-  .welcome-title span.small-text {
-    font-size: 22px; /* Smaller font for "WELCOME TO" */
-    font-weight: normal; /* No bold */
-    display: block;
-  }
-
-  .welcome-title span.large-text {
-    font-size: 42px; /* Larger font for "WEATHER PULSE" */
-    font-weight: bold; /* Make it bold */
-  }
-
-  .welcome-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    margin-top: -10px;
-  }
-
-  .welcome-text b, .welcome-text strong {
-    font-weight: bold;
-  }
-
-  .feature-table {
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse;
-  }
-
-  .feature-table td {
-    width: 33.33%; /* Ensures equal width for each column */
-    padding: 10px; /* Adds spacing around images */
-    vertical-align: middle; /* Centers images and captions */
-    font-family: 'Futura', sans-serif;
-    font-size: 14px;
-  }
-</style>
-
-<center><img src="images/clipboard-306778515.png" width="200"></center>
-<div class="welcome-container">
-  <h2 class="welcome-title">
-    <span class="small-text">WELCOME TO</span> 
-    <span class="large-text">WEATHER PULSE</span><br><br>
-  </h2>
-  
-  <p class="welcome-text">
-    
-    <br>Singapore's climate has been experiencing <strong>rising temperatures and increasing weather extremes</strong> driven by climate change and urbanisation. In 2024, Singapore experienced one of its <strong>hottest years on record</strong>, with temperatures exceeding long-term averages. These climate trends pose significant risks, including <strong>heat stress, water resource management challenges and urban planning concerns</strong>.<br><br>
-    
-    Existing reports and tools offer real-time weather forecasts and historical comparisons using long-term averages. However, they lack interactive analysis tools that would allow for a deeper exploration of historical trends, spatial patterns and future projections.<br><br>
-    
-    <b>Weather Pulse</b> was developed to address these gaps. It is an R Shiny Application that has the following key features:<br>
-    
-        
-</p><table class="feature-table caption-top table" data-quarto-postprocess="true">
+<section id="weather-pulse---home" class="level1">
+<h1>1.0 Weather Pulse - Home</h1>
+<p>When launching the Shiny application, users will first see the overview to our project. This section will describe the key features of the Shiny application as well as the general information of our dataset and source. On the right pane, there is an overview of the climate variable trends and the weather highlights, based on the dataset used.</p>
+<p><strong>[1]</strong> <strong>Navigation Bar</strong> to the different modules of the Shiny application</p>
+<p><img src="..\images/landingPG.png" class="img-fluid" width="523"></p>
+<p><img src="..\images/landingPG2.png" class="img-fluid" width="485"></p>
+</section>
+<section id="time-series-analysis" class="level1">
+<h1>2.0 Time Series Analysis</h1>
+<section id="exploratory-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-analysis">2.1 Exploratory Analysis</h2>
+<p>The exploratory analysis tab brings the users through 4 types of data analysis approaches, all of which have interactive interfaces. Selection functions are applicable across all the data approaches, however there may be specific nuances for each visualization which require a different selection mode (checkbox list for multi-select vs drop-down list for single select).</p>
+<p>Selections are made on the left pane and the visualization will render on the right.</p>
+<p><u>An overview of the interactive functions:</u></p>
+<p><img src="..\images/Linechart.png" class="img-fluid" width="959"></p>
+<p><img src="..\images/Heatmap.png" class="img-fluid" width="963"></p>
+<p><img src="..\images/Sunburst.png" class="img-fluid" width="965"></p>
+<p><img src="..\images/STL.png" class="img-fluid" width="947"></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 94%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Description</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><img src="images/analysis.png" class="img-fluid" width="100"></td>
-<td><img src="images/map.png" class="img-fluid" width="100"></td>
+<td><strong>[1]</strong></td>
+<td>Select the desired Dataset: Rainfall, Temperature or Wind speed from the drop-down list. This function is available across all data analysis approaches.</td>
 </tr>
 <tr class="even">
-<td>Time-Series Analysis</td>
-<td>Geospatial Analysis</td>
+<td><strong>[2]</strong></td>
+<td>Select the variable corresponding to the selected Dataset in #1. This is a switch function and options change dynamically according to the selection in #1.</td>
+</tr>
+<tr class="odd">
+<td><strong>[3]</strong></td>
+<td>For Line Chart, select the desired station(s) from the checkbox list. Single or multi-select are available.</td>
+</tr>
+<tr class="even">
+<td><strong>[4]</strong></td>
+<td>Select the date range using the calendar function.</td>
+</tr>
+<tr class="odd">
+<td><strong>[5]</strong></td>
+<td>Select the desired type of visualization / analysis approach.</td>
+</tr>
+<tr class="even">
+<td><strong>[6]</strong></td>
+<td>Calendar Heatmap: as this visualization should only be generated for a single station at a time, a drop-down list is used for station selection. Select the desired station for analysis.</td>
+</tr>
+<tr class="odd">
+<td><strong>[7]</strong></td>
+<td>Calendar Heatmap: As this visualization will be showing the entire calendar year’s heatmap, a drop-down list is used for Year selection instead of a date range.</td>
+</tr>
+<tr class="even">
+<td><strong>[8]</strong></td>
+<td>Sunburst Plot: Slider is used for users to select the desired date range by months.</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="time-series-forecasting" class="level2">
+<h2 class="anchored" data-anchor-id="time-series-forecasting">2.2 Time Series Forecasting</h2>
+</section>
+</section>
+<section id="geospatial-analysis" class="level1">
+<h1>3.0 Geospatial Analysis</h1>
+<section id="exploratory-analysis-1" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-analysis-1">3.1 Exploratory Analysis</h2>
+</section>
+<section id="spatial-autocorrelation" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-autocorrelation">3.2 Spatial Autocorrelation</h2>
+</section>
+<section id="inverse-distance-weighted-idw-interpolation" class="level2">
+<h2 class="anchored" data-anchor-id="inverse-distance-weighted-idw-interpolation">3.3 Inverse Distance Weighted (IDW) Interpolation</h2>
 
-    
-      <p></p>
-</div>
 
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -301,6 +319,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

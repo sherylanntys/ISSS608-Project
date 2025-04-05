@@ -1,0 +1,60 @@
+---
+title: "Weather Pulse - Shiny User Guide"
+author: "Leng Yi Xiu & Sheryl Ann Tan Yi-Shi"
+date: "2025-04-05"
+date-modified: "last-modified"
+execute: 
+  echo: true
+  eval: true
+  warning: false
+  freeze: true
+---
+
+# 1.0 Weather Pulse - Home
+
+When launching the Shiny application, users will first see the overview to our project. This section will describe the key features of the Shiny application as well as the general information of our dataset and source. On the right pane, there is an overview of the climate variable trends and the weather highlights, based on the dataset used.
+
+**\[1\]** **Navigation Bar** to the different modules of the Shiny application
+
+![](/images/landingPG.png){width="523"}
+
+![](/images/landingPG2.png){width="485"}
+
+# 2.0 Time Series Analysis
+
+## 2.1 Exploratory Analysis
+
+The exploratory analysis tab brings the users through 4 types of data analysis approaches, all of which have interactive interfaces. Selection functions are applicable across all the data approaches, however there may be specific nuances for each visualization which require a different selection mode (checkbox list for multi-select vs drop-down list for single select).
+
+Selections are made on the left pane and the visualization will render on the right.
+
+[An overview of the interactive functions:]{.underline}
+
+![](/images/Linechart.png){width="959"}
+
+![](/images/Heatmap.png){width="963"}
+
+![](/images/Sunburst.png){width="965"}
+
+![](/images/STL.png){width="947"}
+
+| \#        | Description                                                                                                                                                                                |
+|------|-----------------------------------------------------------------------------------------------|
+| **\[1\]** | Select the desired Dataset: Rainfall, Temperature or Wind speed from the drop-down list. This function is available across all data analysis approaches.                                   |
+| **\[2\]** | Select the variable corresponding to the selected Dataset in #1. This is a switch function and options change dynamically according to the selection in #1.                                |
+| **\[3\]** | For Line Chart, select the desired station(s) from the checkbox list. Single or multi-select are available.                                                                                |
+| **\[4\]** | Select the date range using the calendar function.                                                                                                                                         |
+| **\[5\]** | Select the desired type of visualization / analysis approach.                                                                                                                              |
+| **\[6\]** | Calendar Heatmap: as this visualization should only be generated for a single station at a time, a drop-down list is used for station selection. Select the desired station for analysis.  |
+| **\[7\]** | Calendar Heatmap: As this visualization will be showing the entire calendar year's heatmap, a drop-down list is used for Year selection instead of a date range.                           |
+| **\[8\]** | Sunburst Plot: Slider is used for users to select the desired date range by months.                                                                                                        |
+
+## 2.2 Time Series Forecasting
+
+# 3.0 Geospatial Analysis
+
+## 3.1 Exploratory Analysis
+
+## 3.2 Spatial Autocorrelation
+
+## 3.3 Inverse Distance Weighted (IDW) Interpolation

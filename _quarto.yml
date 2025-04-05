@@ -27,7 +27,7 @@ website:
           - text: "Shiny App-IDW"
             href: https://isss608weatherpulse.shinyapps.io/Geospatial_IDW/           
           - text: "User Guide"
-            href: link here
+            href: Project Modules/User_Guide.html
         
 format:
   html:
