@@ -49,20 +49,6 @@
     "text": "Footnotes\n\n\nHui, C. H. S., & Begum, S. (2025, January 10). Degrees of danger: Beating the heat in South-east Asia. The Straits Times. https://www.straitstimes.com/asia/se-asia/degrees-of-danger-beating-the-heat-in-south-east-asia↩︎\nSim, S. (2025, January 10). 2024 one of the hottest years, rainfall also higher than average: Met Service. The Straits Times. https://www.straitstimes.com/singapore/2024-joint-warmest-year-on-record-for-singapore↩︎\nMeteorological Service Singapore. (2025). Singapore Climate 2024: The year in numbers. Meteorological Service Singapore.↩︎\nNg, D., & Tang, H. H. (2019, January 13). Why Singapore is heating up twice as fast as the rest of the world. Channel News Asia. https://www.channelnewsasia.com/cnainsider/singapore-hot-weather-urban-heat-effect-temperature-humidity-906231↩︎\nSim, S. (2025, January 10). 2024 one of the hottest years, rainfall also higher than average: Met Service. The Straits Times. https://www.straitstimes.com/singapore/2024-joint-warmest-year-on-record-for-singapore↩︎\nTeng, R., & Ng, D. (2024, January 10). Concerns grow over heat-related health risks as Singapore gets warmer. Channel News Asia. https://www.channelnewsasia.com/singapore/singapore-weather-heat-stress-higher-warmer-temperatures-2100-climate-study-health-risks-concerns-4036561↩︎\nMeteorological Service Singapore. (2025). Singapore Climate 2024: The year in numbers. Meteorological Service Singapore.↩︎\nMeteorological Service Singapore. (n.d.). Historical daily records. Meteorological Service Singapore. https://www.weather.gov.sg/climate-historical-daily/↩︎\nLai, Y., & Dzombak, D. A. (2020). Use of the Autoregressive Integrated Moving Average (ARIMA) model to forecast near-term regional temperature and precipitation. Weather and Forecasting, 35(3). https://doi.org/10.1175/WAF-D-19-0158.1↩︎"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "ISSS608 Visual Analytics and Applications",
-    "section": "",
-    "text": "WELCOME TO \n    WEATHER PULSE\n  \n  \n  \n    \n    Singapore's climate has been experiencing rising temperatures and increasing weather extremes driven by climate change and urbanisation. In 2024, Singapore experienced one of its hottest years on record, with temperatures exceeding long-term averages. These climate trends pose significant risks, including heat stress, water resource management challenges and urban planning concerns.\n    \n    Existing reports and tools offer real-time weather forecasts and historical comparisons using long-term averages. However, they lack interactive analysis tools that would allow for a deeper exploration of historical trends, spatial patterns and future projections.\n    \n    Weather Pulse was developed to address these gaps. It is an R Shiny Application that has the following key features:\n    \n        \n\n\n\n\n\n\n\nTime-Series Analysis\nGeospatial Analysis"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "Meet the Team:\n  Group 8\n  \n  \n\n\n\n\n\n\n\nLeng Yi Xiu\nSheryl Ann Tan"
-  },
-  {
     "objectID": "Project Modules/Data_Preparation.html",
     "href": "Project Modules/Data_Preparation.html",
     "title": "Data Preparation",
@@ -96,6 +82,20 @@
     "title": "Data Preparation",
     "section": "2.4 Preparing Geospatial data frame",
     "text": "2.4 Preparing Geospatial data frame\nIn order to visualize the automated weather stations on the map of Singapore, we will first need to transform any objects and map them in the SVY21 system.\n\n2.4.1 Setting stations_df Long, Lat data to coordinates\n\n\nClick to view code for setting crs = 3414\nstations_df &lt;- st_as_sf(stations_df, coords = c(\"Long\", \"Lat\"), crs = 4326)\nstations_df_svy21 &lt;- st_transform(stations_df, 3414)\n\n\n\n\n2.4.2 Visualizing geospatial data\n\n\nClick to view code\ntmap_mode(\"view\")\n\n\n\n\nClick to view code for plotting points on map\n  tm_shape(stations_df_svy21) +\n  tm_bubbles(col = \"red\",\n             size = 1,\n             border.col = \"black\",\n             border.lwd = 1,\n             popup.vars = \"StationName\"\n             )\n\n\n\n\n\n\n\n\nClick to view code\ntmap_mode(\"plot\")\n\n\n\n\n2.4.3 Merge aspatial and geospatial data\n\n\nClick to view code for merging aspatial data with station coordinates\nclimate_data_2020to2024 &lt;- left_join(climate_data, stations_df_svy21, by = c(\"Station\" = \"StationName\"))\n\n# Write the combined data to a separate CSV file\nwrite_csv(climate_data_2020to2024, \"data/aspatial/climate_data_2020to2024.csv\")\n\n# View the first few rows of the merged data\nhead(climate_data_2020to2024)\n\n\n# A tibble: 6 × 20\n  Station    Year Month   Day `Daily Rainfall Total (mm)` Highest 30 min Rainf…¹\n  &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;                       &lt;dbl&gt;                  &lt;dbl&gt;\n1 Admiralty  2020     4     1                         0.4                    0.4\n2 Admiralty  2020     4     2                         5                      3  \n3 Admiralty  2020     4     3                         8.6                    6.2\n4 Admiralty  2020     4     4                         0                      0  \n5 Admiralty  2020     4     5                         0                      0  \n6 Admiralty  2020     4     6                         0                      0  \n# ℹ abbreviated name: ¹​`Highest 30 min Rainfall (mm)`\n# ℹ 14 more variables: `Highest 60 min Rainfall (mm)` &lt;dbl&gt;,\n#   `Highest 120 min Rainfall (mm)` &lt;dbl&gt;, `Mean Temperature (°C)` &lt;dbl&gt;,\n#   `Maximum Temperature (°C)` &lt;dbl&gt;, `Minimum Temperature (°C)` &lt;dbl&gt;,\n#   `Mean Wind Speed (km/h)` &lt;dbl&gt;, `Max Wind Speed (km/h)` &lt;dbl&gt;,\n#   station &lt;chr&gt;, year &lt;int&gt;, month &lt;int&gt;, date &lt;date&gt;, StationType &lt;chr&gt;,\n#   StationID &lt;chr&gt;, geometry &lt;POINT [m]&gt;"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Meet the Team:\n  Group 8\n  \n  \n\n\n\n\n\n\n\nLeng Yi Xiu\nSheryl Ann Tan"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ISSS608 Visual Analytics and Applications",
+    "section": "",
+    "text": "WELCOME TO \n    WEATHER PULSE\n  \n  \n  \n    \n    Singapore's climate has been experiencing rising temperatures and increasing weather extremes driven by climate change and urbanisation. In 2024, Singapore experienced one of its hottest years on record, with temperatures exceeding long-term averages. These climate trends pose significant risks, including heat stress, water resource management challenges and urban planning concerns.\n    \n    Existing reports and tools offer real-time weather forecasts and historical comparisons using long-term averages. However, they lack interactive analysis tools that would allow for a deeper exploration of historical trends, spatial patterns and future projections.\n    \n    Weather Pulse was developed to address these gaps. It is an R Shiny Application that has the following key features:\n    \n        \n\n\n\n\n\n\n\nTime-Series Analysis\nGeospatial Analysis"
   },
   {
     "objectID": "Project Modules/Time_Series.html",
