@@ -19,11 +19,13 @@ website:
           - text: "Time-Series"
             href: Project Modules/Time_Series.html
           - text: "Geospatial"
-            href: link here
+            href: https://isss608visualanalytics-yxleng.netlify.app/take-home_ex/take-home_ex03/take-home_ex03
       - text: "Shiny App"
         menu: 
-          - text: "Shiny App"
+          - text: "Shiny App-Main"
             href: https://isss608-weatherpulse.shinyapps.io/home/
+          - text: "Shiny App-IDW"
+            href: https://isss608weatherpulse.shinyapps.io/Geospatial_IDW/           
           - text: "User Guide"
             href: link here
         
