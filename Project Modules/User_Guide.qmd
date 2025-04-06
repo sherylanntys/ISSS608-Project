@@ -303,14 +303,59 @@ The Forecast Model Comparison feature in our Shiny application enables users to 
     -   **Show Forecast Results**: Select this to see the forecasted values for each station based on the selected model.
 9.  **Data Interaction**: Hover over any datapoint on the line chart to trigger a tooltip that provides detailed information about that particular point.
 
-# 3.0 Geospatial Analysis
+# 3.0 Module 2: Geospatial Analysis
 
-## 3.1 Exploratory Analysis
+## 3.1 Sub-Module 1: Exploratory Analysis
+
+This part of the application enables users to delve into the data through an **interactive bubble map** for each dataset, to visualize the distribution of total rainfall, mean temperature and mean wind speed across Singapore weather stations.
 
 ![](/images/bubbleplot.png)
 
-## 3.2 Spatial Autocorrelation
+**Notes**:
+
+1.  **Navigation Tabs**: Click on the tabs to switch between the 3 different datasets for total rainfall, mean temperature and mean wind speed.
+
+2.  **Select Year**: Select the year you wish to visualise.
+
+3.  **Select Month:** Select the month you wish to visualise.
+
+4.  **Bubble Tooltip:** Click on corresponding bubble to view tooltip with details of data point.
+
+## 3.2 Sub-Module 2: Spatial Autocorrelation
+
+This part of the application enables users to delve into the data through an **interactive bubble map** for each dataset, to visualize the spatial autocorrelation between each weather station.
+
+For understanding:
+
+-   **Positive** Spatial Autocorrelation (**Darker** tones): Areas with high wind speed might be near other areas with similarly high wind speed.
+
+<!-- -->
+
+-   **Negative** Spatial Autocorrelation (**Lighter** tones): Areas with high wind speed might be near other areas with low wind speed.
 
 ![](/images/localmorani.png)
 
-## 3.3 Inverse Distance Weighted (IDW) Interpolation
+**Notes**:
+
+1.  **Navigation Tabs**: Similar to Sub-Module 1, click on the tabs to switch between the 3 different datasets for total rainfall, mean temperature and mean wind speed.
+2.  **Select Year**: Select the year you wish to visualise.
+3.  **Select Month:** Select the month you wish to visualise.
+4.  **Number of Nearest Neighbors**: Use slider selection to adjust the spatial extent around each weather station point.
+5.  **Bubble Tooltip:** Click on corresponding bubble to view tooltip with details of data point.
+
+## 3.3 Sub-Module 3: Inverse Distance Weighted (IDW) Interpolation
+
+This part of the application allows users to explore the data through an **interactive IDW interpolation map**, providing a visualization of the spatial distribution and influence of each weather station across Singapore. Number of interpolated points (locations) are selected at random.
+
+![](/images/IDW.png)
+
+**Notes**:
+
+1.  **Navigation Tabs**: Similar to Sub-Module 1, click on the tabs to switch between the 3 different datasets for total rainfall, mean temperature and mean wind speed.
+2.  **Select Year**: Select the year you wish to visualise.
+3.  **Select Month:** Select the month you wish to visualise.
+4.  **Resolution**: Determines how finely or coarsely the map area is divided into for interpolation of unknown points. Users can select this based on the level of detail required using the slider function, with the min and max set for optimal visualization.
+5.  **Nmax**: maximum number of nearest data points that the interpolation will consider. Users can select this based on how muchthe interpolation should rely on distant points.
+6.  **Bubble Tooltip:** Click on corresponding bubble to view tooltip with details of data point.
+
+— End. Version 1.0 (06 April 2025) —
