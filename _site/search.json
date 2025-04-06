@@ -217,48 +217,6 @@
     "text": "Notes:\n\nNavigation bar to navigate between the different modules of the application.\nOverview of the project and dataset.\nOverview of climate trends and key climate highlights.\n\nUpon launching the Weather Pulse Shiny application, users will be directed to the landing page which provides a brief introduction to the key features of the application, along with information about the dataset and its sources.\nThe right pane of the application features a overview of the trends for the respective climate variables and notable climate highlights. This area is designed to give a quick snapshot of the data trends based on the dataset utilised.\nUse this section to familiarise yourself with the general climate trends and significant climate highlights captured in the dataset. This initial view serves as a gateway to the more detailed analysis available within the other sections of the application."
   },
   {
-    "objectID": "Project Modules/User_Guide.html#exploratory-analysis",
-    "href": "Project Modules/User_Guide.html#exploratory-analysis",
-    "title": "Weather Pulse - Shiny User Guide",
-    "section": "3.1 Exploratory Analysis",
-    "text": "3.1 Exploratory Analysis"
-  },
-  {
-    "objectID": "Project Modules/User_Guide.html#time-series-forecasting",
-    "href": "Project Modules/User_Guide.html#time-series-forecasting",
-    "title": "Weather Pulse - Shiny User Guide",
-    "section": "2.2 Time Series Forecasting",
-    "text": "2.2 Time Series Forecasting"
-  },
-  {
-    "objectID": "Project Modules/User_Guide.html#exploratory-analysis-1",
-    "href": "Project Modules/User_Guide.html#exploratory-analysis-1",
-    "title": "Weather Pulse - Shiny User Guide",
-    "section": "3.1 Exploratory Analysis",
-    "text": "3.1 Exploratory Analysis"
-  },
-  {
-    "objectID": "Project Modules/User_Guide.html#spatial-autocorrelation",
-    "href": "Project Modules/User_Guide.html#spatial-autocorrelation",
-    "title": "Weather Pulse - Shiny User Guide",
-    "section": "3.2 Spatial Autocorrelation",
-    "text": "3.2 Spatial Autocorrelation"
-  },
-  {
-    "objectID": "Project Modules/User_Guide.html#inverse-distance-weighted-idw-interpolation",
-    "href": "Project Modules/User_Guide.html#inverse-distance-weighted-idw-interpolation",
-    "title": "Weather Pulse - Shiny User Guide",
-    "section": "3.3 Inverse Distance Weighted (IDW) Interpolation",
-    "text": "3.3 Inverse Distance Weighted (IDW) Interpolation"
-  },
-  {
-    "objectID": "Project Modules/User_Guide.html#sub-module-1-exploratory-analysis",
-    "href": "Project Modules/User_Guide.html#sub-module-1-exploratory-analysis",
-    "title": "Weather Pulse - Shiny User Guide",
-    "section": "3.1 Sub-Module 1: Exploratory Analysis",
-    "text": "3.1 Sub-Module 1: Exploratory Analysis\nThis part of the application enables users to delve into the data through an interactive bubble map for each dataset, to visualize the distribution of total rainfall, mean temperature and mean wind speed across Singapore weather stations.\n\nNotes:\n\nNavigation Tabs: Click on the tabs to switch between the 3 different datasets for total rainfall, mean temperature and mean wind speed.\nSelect Year: Select the year you wish to visualise.\nSelect Month: Select the month you wish to visualise.\nBubble Tooltip: Click on corresponding bubble to view tooltip with details of data point."
-  },
-  {
     "objectID": "Project Modules/User_Guide.html#sub-module-1-exploratory-data-analysis",
     "href": "Project Modules/User_Guide.html#sub-module-1-exploratory-data-analysis",
     "title": "Weather Pulse - Shiny User Guide",
@@ -271,6 +229,13 @@
     "title": "Weather Pulse - Shiny User Guide",
     "section": "2.2 Sub-Module 2: Time Series Forecasting",
     "text": "2.2 Sub-Module 2: Time Series Forecasting\nThis sub-module enables users to project future weather conditions. In particular, users can select and compare across multiple forecasting models. Alternatively, they can run forecasts for different stations simultaneously.\n\n2.2.1 Model Diagnostics\nThis function provides graphical analyses of the residuals to help evaluate model performance:\n\nResiduals Over Time: Observing how residuals are spread over time can help detect patterns that the model fails to capture\nAutocorrelation Function (ACF) of Residuals: This graph shows the correlation of residuals with their own lagged values. It helps to identify any autocorrelation that the model may not have accounted for.\nHistogram of Residuals: This plot displays the distribution of the residuals. If the residuals are normally distributed, it indicates that the model is a good fit.\n\n\nNotes:\n\nNavigation Tabs: Click on the tabs to switch between different functions of the forecasting module.\nSelect Dataset: Choose the weather variable you wish to analyse. Available options include rainfall, temperature and wind speed.\nSelect Metric: After choosing a weather variable, select a specific metric to visualise. Options vary based on the selected variable in Note 2.\n\n\n\n\n\n\n\n\nWeather Variable\nMetric\n\n\n\n\nRainfall\n\nTotal Rainfall\nHighest 30 min Rainfall\n\n\n\nTemperature\n\nMean Temperature\nMaximum Temperature\nMinimum Temperature\n\n\n\nWind Speed\n\nMean Wind Speed\nMax Wind Speed\n\n\n\n\n\nSelect Station: Select the station you want to include in your visualisation.\nSelect Model: Choose from various models such as SES (Simple Exponential Smoothing), Holt (Holt’s Linear Trend Model), Damped Holt, Winter-Add (Additive Holt-Winters), Winter-Mult (Multiplicative Holt-Winters), and ARIMA.\nSelect Date Range: Select the the date range you wish to visualise.\n\n\n\n2.2.2 Forecast Model Comparison\nThe Forecast Model Comparison feature in our Shiny application enables users to evaluate and compare the performance of multiple forecasting models simultaneously. This tool is designed to assist users in selecting the best model for predicting future weather conditions based on historical data.\n\n\n\nNotes:\n\nNavigation Tabs: Click on the tabs to switch between different functions of the forecasting module.\nSelect Dataset: Choose the weather variable you wish to analyse. Available options include rainfall, temperature and wind speed.\nSelect Metric: After choosing a weather variable, select a specific metric to visualise. Options vary based on the selected variable in Note 2.\n\n\n\n\n\n\n\n\nWeather Variable\nMetric\n\n\n\n\nRainfall\n\nTotal Rainfall\nHighest 30 min Rainfall\n\n\n\nTemperature\n\nMean Temperature\nMaximum Temperature\nMinimum Temperature\n\n\n\nWind Speed\n\nMean Wind Speed\nMax Wind Speed\n\n\n\n\n\nSelect Station: Select the station you want to include in your visualisation.\nSelect Training Period: Define the period over which the historical data will be used to train the forecasting model.\nSelect Forecast End Date: Set the end date for the forecast period to determine how far into the future the models will predict.\nSelect Models: Choose multiple forecasting models to compare. Options include SES, Holt, Damped Holt, Winter-Add, Winter-Mult, and ARIMA.\nToggle Between Outputs:\n\nShow Plot: This option displays graphical representations of forecasts from each model, allowing for visual comparison of how each model predicts future trends.\nShow Accuracy Metrics: Toggle this view to view statistical measures of each model’s accuracy, including error metrics such as MAE, RMSE.\nShow Forecast Results: Select this to see the forecasted values for each model.\n\nData Interaction: Hover over any datapoint on the line chart to trigger a tooltip that provides detailed information about that particular point.\n\n\n\n2.2.3 Station Forecast Comparison\n\nNotes:\n\nNavigation Tabs: Click on the tabs to switch between different functions of the forecasting module.\nSelect Dataset: Choose the weather variable you wish to analyse. Available options include rainfall, temperature and wind speed.\nSelect Metric: After choosing a weather variable, select a specific metric to visualise. Options vary based on the selected variable in Note 2.\n\n\n\n\n\n\n\n\nWeather Variable\nMetric\n\n\n\n\nRainfall\n\nTotal Rainfall\nHighest 30 min Rainfall\n\n\n\nTemperature\n\nMean Temperature\nMaximum Temperature\nMinimum Temperature\n\n\n\nWind Speed\n\nMean Wind Speed\nMax Wind Speed\n\n\n\n\n\nSelect Model: Choose the forecasting model you want to apply. Models include SES, Holt, Damped Holt, Winter-Add, Winter Mult and ARIMA.\nSelect Stations: Use checkboxes to select multiple stations for which you want to generate forecasts. This allows for simultaneous analysis across different locations, facilitating comparative insights.\nSelect Training Period: Define the period over which the historical data will be used to train the forecasting model.\nSelect Forecast End Date: Set the end date for the forecast period to determine how far into the future the models will predict.\nToggle Between Outputs:\n\nShow Plot: This option displays graphical representations of forecasts for each station, allowing for visual comparison of predicted trends across different locations.\nShow Accuracy Metrics: Toggle this view to view statistical measures of each model’s accuracy, including error metrics such as MAE, RMSE.\nShow Forecast Results: Select this to see the forecasted values for each station based on the selected model.\n\nData Interaction: Hover over any datapoint on the line chart to trigger a tooltip that provides detailed information about that particular point."
+  },
+  {
+    "objectID": "Project Modules/User_Guide.html#sub-module-1-exploratory-analysis",
+    "href": "Project Modules/User_Guide.html#sub-module-1-exploratory-analysis",
+    "title": "Weather Pulse - Shiny User Guide",
+    "section": "3.1 Sub-Module 1: Exploratory Analysis",
+    "text": "3.1 Sub-Module 1: Exploratory Analysis\nThis part of the application enables users to delve into the data through an interactive bubble map for each dataset, to visualize the distribution of total rainfall, mean temperature and mean wind speed across Singapore weather stations.\n\nNotes:\n\nNavigation Tabs: Click on the tabs to switch between the 3 different datasets for total rainfall, mean temperature and mean wind speed.\nSelect Year: Select the year you wish to visualise.\nSelect Month: Select the month you wish to visualise.\nBubble Tooltip: Click on corresponding bubble to view tooltip with details of data point."
   },
   {
     "objectID": "Project Modules/User_Guide.html#sub-module-2-spatial-autocorrelation",
