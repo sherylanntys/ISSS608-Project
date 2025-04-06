@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leng Yi Xiu &amp; Sheryl Ann Tan Yi-Shi">
 <meta name="dcterms.date" content="2025-04-05">
 
-<title>ISSS608: Weather Pulse - Weather Pulse - Shiny User Guide</title>
+<title>Weather Pulse - Shiny User Guide – ISSS608: Weather Pulse</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,10 +37,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bf19b75f51ea680c8de03e84aa65eabd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -95,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Project Proposal</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-prototype" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-prototype" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Prototype</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-prototype">    
@@ -110,17 +110,17 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-shiny-app" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-shiny-app" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Shiny App</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-shiny-app">    
         <li>
     <a class="dropdown-item" href="https://isss608-weatherpulse.shinyapps.io/home/">
- <span class="dropdown-text">Shiny App-Main</span></a>
+ <span class="dropdown-text">Shiny App: Main</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="https://isss608weatherpulse.shinyapps.io/Geospatial_IDW/">
- <span class="dropdown-text">Shiny App-IDW</span></a>
+ <span class="dropdown-text">Shiny App: Geospatial IDW Module</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../Project Modules/User_Guide.html">
@@ -145,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -160,14 +160,25 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#weather-pulse---home" id="toc-weather-pulse---home" class="nav-link active" data-scroll-target="#weather-pulse---home">1.0 Weather Pulse - Home</a></li>
-  <li><a href="#time-series-analysis" id="toc-time-series-analysis" class="nav-link" data-scroll-target="#time-series-analysis">2.0 Time Series Analysis</a>
+  <li><a href="#module-1-time-series-analysis" id="toc-module-1-time-series-analysis" class="nav-link" data-scroll-target="#module-1-time-series-analysis">2.0 Module 1: Time Series Analysis</a>
   <ul class="collapse">
-  <li><a href="#exploratory-analysis" id="toc-exploratory-analysis" class="nav-link" data-scroll-target="#exploratory-analysis">2.1 Exploratory Analysis</a></li>
-  <li><a href="#time-series-forecasting" id="toc-time-series-forecasting" class="nav-link" data-scroll-target="#time-series-forecasting">2.2 Time Series Forecasting</a></li>
+  <li><a href="#sub-module-1-exploratory-data-analysis" id="toc-sub-module-1-exploratory-data-analysis" class="nav-link" data-scroll-target="#sub-module-1-exploratory-data-analysis">2.1 Sub-Module 1: Exploratory Data Analysis</a>
+  <ul class="collapse">
+  <li><a href="#line-chart" id="toc-line-chart" class="nav-link" data-scroll-target="#line-chart">2.1.1 Line Chart</a></li>
+  <li><a href="#calendar-heatmap" id="toc-calendar-heatmap" class="nav-link" data-scroll-target="#calendar-heatmap">2.1.2 Calendar Heatmap</a></li>
+  <li><a href="#sunburst-plot" id="toc-sunburst-plot" class="nav-link" data-scroll-target="#sunburst-plot">2.1.3 Sunburst Plot</a></li>
+  <li><a href="#stl-decomposition" id="toc-stl-decomposition" class="nav-link" data-scroll-target="#stl-decomposition">2.1.4 STL Decomposition</a></li>
+  </ul></li>
+  <li><a href="#sub-module-2-time-series-forecasting" id="toc-sub-module-2-time-series-forecasting" class="nav-link" data-scroll-target="#sub-module-2-time-series-forecasting">2.2 Sub-Module 2: Time Series Forecasting</a>
+  <ul class="collapse">
+  <li><a href="#model-diagnostics" id="toc-model-diagnostics" class="nav-link" data-scroll-target="#model-diagnostics">2.2.1 Model Diagnostics</a></li>
+  <li><a href="#forecast-model-comparison" id="toc-forecast-model-comparison" class="nav-link" data-scroll-target="#forecast-model-comparison">2.2.2 Forecast Model Comparison</a></li>
+  <li><a href="#station-forecast-comparison" id="toc-station-forecast-comparison" class="nav-link" data-scroll-target="#station-forecast-comparison">2.2.3 Station Forecast Comparison</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#geospatial-analysis" id="toc-geospatial-analysis" class="nav-link" data-scroll-target="#geospatial-analysis">3.0 Geospatial Analysis</a>
   <ul class="collapse">
-  <li><a href="#exploratory-analysis-1" id="toc-exploratory-analysis-1" class="nav-link" data-scroll-target="#exploratory-analysis-1">3.1 Exploratory Analysis</a></li>
+  <li><a href="#exploratory-analysis" id="toc-exploratory-analysis" class="nav-link" data-scroll-target="#exploratory-analysis">3.1 Exploratory Analysis</a></li>
   <li><a href="#spatial-autocorrelation" id="toc-spatial-autocorrelation" class="nav-link" data-scroll-target="#spatial-autocorrelation">3.2 Spatial Autocorrelation</a></li>
   <li><a href="#inverse-distance-weighted-idw-interpolation" id="toc-inverse-distance-weighted-idw-interpolation" class="nav-link" data-scroll-target="#inverse-distance-weighted-idw-interpolation">3.3 Inverse Distance Weighted (IDW) Interpolation</a></li>
   </ul></li>
@@ -203,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">April 5, 2025</p>
+      <p class="date-modified">April 6, 2025</p>
     </div>
   </div>
     
@@ -216,77 +227,421 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="weather-pulse---home" class="level1">
 <h1>1.0 Weather Pulse - Home</h1>
-<p>When launching the Shiny application, users will first see the overview to our project. This section will describe the key features of the Shiny application as well as the general information of our dataset and source. On the right pane, there is an overview of the climate variable trends and the weather highlights, based on the dataset used.</p>
-<p><strong>[1]</strong> <strong>Navigation Bar</strong> to the different modules of the Shiny application</p>
-<p><img src="..\images/landingPG.png" class="img-fluid" width="523"></p>
-<p><img src="..\images/landingPG2.png" class="img-fluid" width="485"></p>
+<p><img src="images/clipboard-344763662.png" class="img-fluid"></p>
+<p><strong>Notes:</strong></p>
+<ol type="1">
+<li><p><strong>Navigation bar</strong> to navigate between the different modules of the application.</p></li>
+<li><p>Overview of the project and dataset.</p></li>
+<li><p>Overview of climate trends and key climate highlights.</p></li>
+</ol>
+<p>Upon launching the <strong>Weather Pulse</strong> Shiny application, users will be directed to the <strong>landing page</strong> which provides a brief introduction to the key features of the application, along with information about the dataset and its sources.</p>
+<p>The right pane of the application features a overview of the trends for the respective climate variables and notable climate highlights. This area is designed to give a <strong>quick snapshot</strong> of the data trends based on the dataset utilised.</p>
+<p>Use this section to familiarise yourself with the general climate trends and significant climate highlights captured in the dataset. This initial view serves as a gateway to the more detailed analysis available within the other sections of the application.</p>
 </section>
-<section id="time-series-analysis" class="level1">
-<h1>2.0 Time Series Analysis</h1>
-<section id="exploratory-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-analysis">2.1 Exploratory Analysis</h2>
-<p>The exploratory analysis tab brings the users through 4 types of data analysis approaches, all of which have interactive interfaces. Selection functions are applicable across all the data approaches, however there may be specific nuances for each visualization which require a different selection mode (checkbox list for multi-select vs drop-down list for single select).</p>
-<p>Selections are made on the left pane and the visualization will render on the right.</p>
-<p><u>An overview of the interactive functions:</u></p>
-<p><img src="..\images/Linechart.png" class="img-fluid" width="959"></p>
-<p><img src="..\images/Heatmap.png" class="img-fluid" width="963"></p>
-<p><img src="..\images/Sunburst.png" class="img-fluid" width="965"></p>
-<p><img src="..\images/STL.png" class="img-fluid" width="947"></p>
+<section id="module-1-time-series-analysis" class="level1">
+<h1>2.0 Module 1: Time Series Analysis</h1>
+<section id="sub-module-1-exploratory-data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="sub-module-1-exploratory-data-analysis">2.1 Sub-Module 1: Exploratory Data Analysis</h2>
+<p>This part of the application enables users to delve into the data through four types of interactive charts: <strong>line chart, calendar heatmap, sunburst plot and STL decomposition</strong>. Generally, users can expect:</p>
+<ul>
+<li><p><strong>Interactive Selection</strong>: Users can make selections using the tools on the left pane. The available selection methods include checkbox list for multiple selections and dropdown lists for single selections. This flexibility allow users to slice and dice the data according to their analysis as it enables them to filter and segment the data dynamically.</p></li>
+<li><p><strong>Data Visualisation</strong>: Upon making selections, the corresponding visualisations will render on the right pane, enabling users to immediately see the impact of their selections. Users can also hover over the visualisations for tooltips, which will display more detailed information.</p></li>
+</ul>
+<section id="line-chart" class="level3">
+<h3 class="anchored" data-anchor-id="line-chart">2.1.1 Line Chart</h3>
+<p><img src="images/clipboard-2780545708.png" class="img-fluid"></p>
+<p><strong>Notes</strong>:</p>
+<ol type="1">
+<li><strong>EDA Navigation Tabs</strong>: Click on the tabs to switch between the different types of visualisation tools.</li>
+<li><strong>Select Dataset</strong>: Choose the weather variable you wish to analyse. Available options include rainfall, temperature and wind speed.</li>
+<li><strong>Select Metric</strong>: After choosing a weather variable, select a specific metric to visualise. Options vary based on the selected variable in <strong>Note 2</strong>.</li>
+</ol>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
-<col style="width: 94%">
+<col style="width: 26%">
+<col style="width: 41%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>#</th>
-<th>Description</th>
+<th>Weather Variable</th>
+<th>Metric</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>[1]</strong></td>
-<td>Select the desired Dataset: Rainfall, Temperature or Wind speed from the drop-down list. This function is available across all data analysis approaches.</td>
+<td>Rainfall</td>
+<td><ul>
+<li><p>Total Rainfall</p></li>
+<li><p>Highest 30 min Rainfall</p></li>
+</ul></td>
 </tr>
 <tr class="even">
-<td><strong>[2]</strong></td>
-<td>Select the variable corresponding to the selected Dataset in #1. This is a switch function and options change dynamically according to the selection in #1.</td>
+<td>Temperature</td>
+<td><ul>
+<li><p>Mean Temperature</p></li>
+<li><p>Maximum Temperature</p></li>
+<li><p>Minimum Temperature</p></li>
+</ul></td>
 </tr>
 <tr class="odd">
-<td><strong>[3]</strong></td>
-<td>For Line Chart, select the desired station(s) from the checkbox list. Single or multi-select are available.</td>
-</tr>
-<tr class="even">
-<td><strong>[4]</strong></td>
-<td>Select the date range using the calendar function.</td>
-</tr>
-<tr class="odd">
-<td><strong>[5]</strong></td>
-<td>Select the desired type of visualization / analysis approach.</td>
-</tr>
-<tr class="even">
-<td><strong>[6]</strong></td>
-<td>Calendar Heatmap: as this visualization should only be generated for a single station at a time, a drop-down list is used for station selection. Select the desired station for analysis.</td>
-</tr>
-<tr class="odd">
-<td><strong>[7]</strong></td>
-<td>Calendar Heatmap: As this visualization will be showing the entire calendar year’s heatmap, a drop-down list is used for Year selection instead of a date range.</td>
-</tr>
-<tr class="even">
-<td><strong>[8]</strong></td>
-<td>Sunburst Plot: Slider is used for users to select the desired date range by months.</td>
+<td>Wind Speed</td>
+<td><ul>
+<li><p>Mean Wind Speed</p></li>
+<li><p>Max Wind Speed</p></li>
+</ul></td>
 </tr>
 </tbody>
 </table>
+<ol start="4" type="1">
+<li><strong>Choose Weather Stations</strong>: Select the weather stations you want to compare to observe how the selected variable behaves across different locations.</li>
+<li><strong>Date Range</strong>: Specify the date range for which you want the data to be visualised.</li>
+<li><strong>Data Interaction</strong>: Hover over any datapoint on the line chart to trigger a tooltip that provides detailed information about that particular point.</li>
+</ol>
 </section>
-<section id="time-series-forecasting" class="level2">
-<h2 class="anchored" data-anchor-id="time-series-forecasting">2.2 Time Series Forecasting</h2>
+<section id="calendar-heatmap" class="level3">
+<h3 class="anchored" data-anchor-id="calendar-heatmap">2.1.2 Calendar Heatmap</h3>
+<p>The calendar heatmap visualises the daily records throughout the year. This allow users to see how weather variables change from day-to-day, and quickly identify patterns and outliers in weather data throughout the year.</p>
+<p><img src="images/clipboard-2406059583.png" class="img-fluid"></p>
+<p><strong>Notes</strong>:</p>
+<ol type="1">
+<li><strong>EDA Navigation Tabs</strong>: Click on the tabs to switch between the different types of visualisation tools.</li>
+<li><strong>Select Dataset</strong>: Choose the weather variable you wish to analyse. Available options include rainfall, temperature and wind speed.</li>
+<li><strong>Select Metric</strong>: After choosing a weather variable, select a specific metric to visualise. Options vary based on the selected variable in <strong>Note 2</strong>.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Weather Variable</th>
+<th>Metric</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rainfall</td>
+<td><ul>
+<li><p>Total Rainfall</p></li>
+<li><p>Highest 30 min Rainfall</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Temperature</td>
+<td><ul>
+<li><p>Mean Temperature</p></li>
+<li><p>Maximum Temperature</p></li>
+<li><p>Minimum Temperature</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Wind Speed</td>
+<td><ul>
+<li><p>Mean Wind Speed</p></li>
+<li><p>Max Wind Speed</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li><strong>Select Station</strong>: Select the station you want to include in your visualisation.</li>
+<li><strong>Select Year</strong>: Select the year you wish to visualise.</li>
+<li><strong>Data Interaction</strong>: Hover over any datapoint on the line chart to trigger a tooltip that provides detailed information about that particular point.</li>
+</ol>
+</section>
+<section id="sunburst-plot" class="level3">
+<h3 class="anchored" data-anchor-id="sunburst-plot">2.1.3 Sunburst Plot</h3>
+<p>The sunburst plot is designed to help users visualise longer-term trends by comparing weather data across multiple years. This tool is useful in spotting cyclical patterns and seasonal effects over extended periods.</p>
+<p>The layer arrangement of the sunburst plot is arranged such that the oldest year is placed in the inntermost layer. Each successive layer represents a more recent year, with the most recent year displayed in the outermost layer of the chart.</p>
+<p><img src="images/clipboard-2705724023.png" class="img-fluid"></p>
+<p><strong>Notes</strong>:</p>
+<ol type="1">
+<li><strong>EDA Navigation Tabs</strong>: Click on the tabs to switch between the different types of visualisation tools.</li>
+<li><strong>Select Dataset</strong>: Choose the weather variable you wish to analyse. Available options include rainfall, temperature and wind speed.</li>
+<li><strong>Select Metric</strong>: After choosing a weather variable, select a specific metric to visualise. Options vary based on the selected variable in <strong>Note 2</strong>.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Weather Variable</th>
+<th>Metric</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rainfall</td>
+<td><ul>
+<li><p>Total Rainfall</p></li>
+<li><p>Highest 30 min Rainfall</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Temperature</td>
+<td><ul>
+<li><p>Mean Temperature</p></li>
+<li><p>Maximum Temperature</p></li>
+<li><p>Minimum Temperature</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Wind Speed</td>
+<td><ul>
+<li><p>Mean Wind Speed</p></li>
+<li><p>Max Wind Speed</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li><strong>Select Station</strong>: Select the station you want to include in your visualisation.</li>
+<li><strong>Select Year</strong>: Use the slider input to select the year or range of years you wish to visualise.</li>
+<li><strong>Data Interaction</strong>: Hover over any datapoint on the line chart to trigger a tooltip that provides detailed information about that particular point.</li>
+</ol>
+</section>
+<section id="stl-decomposition" class="level3">
+<h3 class="anchored" data-anchor-id="stl-decomposition">2.1.4 STL Decomposition</h3>
+<p>The STL Decomposition tool is designed to dissect complex time series data into three distinct components: Seasonal, Trend, and Residual. This allows users to analyze and understand the underlying patterns in weather data.</p>
+<p><img src="images/clipboard-1872598979.png" class="img-fluid"></p>
+<p><strong>Notes</strong>:</p>
+<ol type="1">
+<li><strong>EDA Navigation Tabs</strong>: Click on the tabs to switch between the different types of visualisation tools.</li>
+<li><strong>Select Dataset</strong>: Choose the weather variable you wish to analyse. Available options include rainfall, temperature and wind speed.</li>
+<li><strong>Select Metric</strong>: After choosing a weather variable, select a specific metric to visualise. Options vary based on the selected variable in <strong>Note 2</strong>.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Weather Variable</th>
+<th>Metric</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rainfall</td>
+<td><ul>
+<li><p>Total Rainfall</p></li>
+<li><p>Highest 30 min Rainfall</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Temperature</td>
+<td><ul>
+<li><p>Mean Temperature</p></li>
+<li><p>Maximum Temperature</p></li>
+<li><p>Minimum Temperature</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Wind Speed</td>
+<td><ul>
+<li><p>Mean Wind Speed</p></li>
+<li><p>Max Wind Speed</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li><strong>Select Station</strong>: Select the station you want to include in your visualisation.</li>
+<li><strong>Select Date Range:</strong> Select the the date range you wish to visualise.</li>
+</ol>
+</section>
+</section>
+<section id="sub-module-2-time-series-forecasting" class="level2">
+<h2 class="anchored" data-anchor-id="sub-module-2-time-series-forecasting">2.2 Sub-Module 2: Time Series Forecasting</h2>
+<p>This sub-module enables users to project future weather conditions. In particular, users can select and compare across multiple forecasting models. Alternatively, they can run forecasts for different stations simultaneously.</p>
+<section id="model-diagnostics" class="level3">
+<h3 class="anchored" data-anchor-id="model-diagnostics">2.2.1 Model Diagnostics</h3>
+<p>This function provides graphical analyses of the residuals to help evaluate model performance:</p>
+<ul>
+<li><p><strong>Residuals Over Time</strong>: Observing how residuals are spread over time can help detect patterns that the model fails to capture</p></li>
+<li><p><strong>Autocorrelation Function (ACF) of Residuals</strong>: This graph shows the correlation of residuals with their own lagged values. It helps to identify any autocorrelation that the model may not have accounted for.</p></li>
+<li><p><strong>Histogram of Residuals</strong>: This plot displays the distribution of the residuals. If the residuals are normally distributed, it indicates that the model is a good fit.</p></li>
+</ul>
+<p><img src="images/clipboard-540866026.png" class="img-fluid"></p>
+<p><strong>Notes</strong>:</p>
+<ol type="1">
+<li><strong>Navigation Tabs</strong>: Click on the tabs to switch between different functions of the forecasting module.</li>
+<li><strong>Select Dataset</strong>: Choose the weather variable you wish to analyse. Available options include rainfall, temperature and wind speed.</li>
+<li><strong>Select Metric</strong>: After choosing a weather variable, select a specific metric to visualise. Options vary based on the selected variable in <strong>Note 2</strong>.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Weather Variable</th>
+<th>Metric</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rainfall</td>
+<td><ul>
+<li><p>Total Rainfall</p></li>
+<li><p>Highest 30 min Rainfall</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Temperature</td>
+<td><ul>
+<li><p>Mean Temperature</p></li>
+<li><p>Maximum Temperature</p></li>
+<li><p>Minimum Temperature</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Wind Speed</td>
+<td><ul>
+<li><p>Mean Wind Speed</p></li>
+<li><p>Max Wind Speed</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li><strong>Select Station</strong>: Select the station you want to include in your visualisation.</li>
+<li><strong>Select Model</strong>: Choose from various models such as SES (Simple Exponential Smoothing), Holt (Holt’s Linear Trend Model), Damped Holt, Winter-Add (Additive Holt-Winters), Winter-Mult (Multiplicative Holt-Winters), and ARIMA.</li>
+<li><strong>Select Date Range:</strong> Select the the date range you wish to visualise.</li>
+</ol>
+</section>
+<section id="forecast-model-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="forecast-model-comparison">2.2.2 Forecast Model Comparison</h3>
+<p>The Forecast Model Comparison feature in our Shiny application enables users to evaluate and compare the performance of multiple forecasting models simultaneously. This tool is designed to assist users in selecting the best model for predicting future weather conditions based on historical data.</p>
+<p><img src="images/clipboard-667465758.png" class="img-fluid"></p>
+<p><img src="images/clipboard-4258904295.png" class="img-fluid"></p>
+<p><img src="images/clipboard-2773362172.png" class="img-fluid"></p>
+<p><strong>Notes</strong>:</p>
+<ol type="1">
+<li><strong>Navigation Tabs</strong>: Click on the tabs to switch between different functions of the forecasting module.</li>
+<li><strong>Select Dataset</strong>: Choose the weather variable you wish to analyse. Available options include rainfall, temperature and wind speed.</li>
+<li><strong>Select Metric</strong>: After choosing a weather variable, select a specific metric to visualise. Options vary based on the selected variable in <strong>Note 2</strong>.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Weather Variable</th>
+<th>Metric</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rainfall</td>
+<td><ul>
+<li><p>Total Rainfall</p></li>
+<li><p>Highest 30 min Rainfall</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Temperature</td>
+<td><ul>
+<li><p>Mean Temperature</p></li>
+<li><p>Maximum Temperature</p></li>
+<li><p>Minimum Temperature</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Wind Speed</td>
+<td><ul>
+<li><p>Mean Wind Speed</p></li>
+<li><p>Max Wind Speed</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li><strong>Select Station</strong>: Select the station you want to include in your visualisation.</li>
+<li><strong>Select Training Period</strong>: Define the period over which the historical data will be used to train the forecasting model.</li>
+<li><strong>Select Forecast End Date</strong>: Set the end date for the forecast period to determine how far into the future the models will predict.</li>
+<li><strong>Select Models</strong>: Choose multiple forecasting models to compare. Options include SES, Holt, Damped Holt, Winter-Add, Winter-Mult, and ARIMA.</li>
+<li><strong>Toggle Between Outputs</strong>:
+<ul>
+<li><p><strong>Show Plot</strong>: This option displays graphical representations of forecasts from each model, allowing for visual comparison of how each model predicts future trends.</p></li>
+<li><p><strong>Show Accuracy Metrics</strong>: Toggle this view to view statistical measures of each model’s accuracy, including error metrics such as MAE, RMSE.</p></li>
+<li><p><strong>Show Forecast Results</strong>: Select this to see the forecasted values for each model.</p></li>
+</ul></li>
+<li><strong>Data Interaction</strong>: Hover over any datapoint on the line chart to trigger a tooltip that provides detailed information about that particular point.</li>
+</ol>
+</section>
+<section id="station-forecast-comparison" class="level3">
+<h3 class="anchored" data-anchor-id="station-forecast-comparison">2.2.3 Station Forecast Comparison</h3>
+<p><img src="images/clipboard-2209015124.png" class="img-fluid"></p>
+<p><strong>Notes</strong>:</p>
+<ol type="1">
+<li><strong>Navigation Tabs</strong>: Click on the tabs to switch between different functions of the forecasting module.</li>
+<li><strong>Select Dataset</strong>: Choose the weather variable you wish to analyse. Available options include rainfall, temperature and wind speed.</li>
+<li><strong>Select Metric</strong>: After choosing a weather variable, select a specific metric to visualise. Options vary based on the selected variable in <strong>Note 2</strong>.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Weather Variable</th>
+<th>Metric</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rainfall</td>
+<td><ul>
+<li><p>Total Rainfall</p></li>
+<li><p>Highest 30 min Rainfall</p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Temperature</td>
+<td><ul>
+<li><p>Mean Temperature</p></li>
+<li><p>Maximum Temperature</p></li>
+<li><p>Minimum Temperature</p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td>Wind Speed</td>
+<td><ul>
+<li><p>Mean Wind Speed</p></li>
+<li><p>Max Wind Speed</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" type="1">
+<li><strong>Select Model</strong>: Choose the forecasting model you want to apply. Models include SES, Holt, Damped Holt, Winter-Add, Winter Mult and ARIMA.</li>
+<li><strong>Select Stations</strong>: Use checkboxes to select multiple stations for which you want to generate forecasts. This allows for simultaneous analysis across different locations, facilitating comparative insights.</li>
+<li><strong>Select Training Period</strong>: Define the period over which the historical data will be used to train the forecasting model.</li>
+<li><strong>Select Forecast End Date</strong>: Set the end date for the forecast period to determine how far into the future the models will predict.</li>
+<li><strong>Toggle Between Outputs</strong>:
+<ul>
+<li><p><strong>Show Plot</strong>: This option displays graphical representations of forecasts for each station, allowing for visual comparison of predicted trends across different locations.</p></li>
+<li><p><strong>Show Accuracy Metrics</strong>: Toggle this view to view statistical measures of each model’s accuracy, including error metrics such as MAE, RMSE.</p></li>
+<li><p><strong>Show Forecast Results</strong>: Select this to see the forecasted values for each station based on the selected model.</p></li>
+</ul></li>
+<li><strong>Data Interaction</strong>: Hover over any datapoint on the line chart to trigger a tooltip that provides detailed information about that particular point.</li>
+</ol>
+</section>
 </section>
 </section>
 <section id="geospatial-analysis" class="level1">
 <h1>3.0 Geospatial Analysis</h1>
-<section id="exploratory-analysis-1" class="level2">
-<h2 class="anchored" data-anchor-id="exploratory-analysis-1">3.1 Exploratory Analysis</h2>
+<section id="exploratory-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-analysis">3.1 Exploratory Analysis</h2>
 <p><img src="..\images/bubbleplot.png" class="img-fluid"></p>
 </section>
 <section id="spatial-autocorrelation" class="level2">
@@ -336,18 +691,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -379,7 +723,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -387,7 +751,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -484,7 +848,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
