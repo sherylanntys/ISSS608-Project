@@ -28,6 +28,8 @@ website:
             href: https://isss608weatherpulse.shinyapps.io/Geospatial_IDW/           
           - text: "User Guide"
             href: Project Modules/User_Guide.html
+      - text: "Project Poster"
+        href: images/ISSS608_AY2024-25Jan_Group08.jpg
         
 format:
   html:
